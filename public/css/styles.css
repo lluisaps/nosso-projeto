@@ -1,0 +1,392 @@
+/* Estilo global para o corpo e html */
+
+
+/* Layout principal usando grid para o corpo em telas maiores */
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, conteúdo e rodapé */
+    grid-template-columns: 1fr; /* Única coluna */
+    height: 100vh;
+  }
+}
+
+/* Estilo para o cabeçalho */
+.index {
+  /* background: #2652a9; /* Cor de fundo principal */
+  color: white;
+  padding: 4px 20px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* grid-row: 1 / 2; Cabeçalho na primeira linha */
+}
+
+.index ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px; /* Espaçamento uniforme entre itens */
+}
+
+.index ul li {
+  margin: 0;
+}
+
+.index ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.index ul li a:hover, 
+.index ul li a:focus {
+  background-color: #ffffff;
+  color: #2652a9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Estilo para o rodapé */
+.footer {
+  background: #1d1d1d; /* Cor de fundo escura para contraste com o cabeçalho */
+margin-top: 5%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  grid-row: 3 / 4; /* Rodapé na última linha */
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limita a largura máxima para o conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  padding: 0 20px; /* Espaçamento lateral */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte se necessário */
+  text-align: left;
+}
+
+.link-rodape, .link-footer, .logo-footer {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.link-rodape p, .link-footer p {
+    margin: 5px 0;
+}
+
+.itens-center{
+  justify-content: center;
+  align-items: center;
+}
+
+.itens-right{
+  justify-content: right;
+  align-items: center;
+}
+
+.itens-left{
+  justify-content: left;
+  align-items: center;
+}
+
+.img-footer img {
+    max-width: 100px; /* Ajuste a largura máxima da imagem conforme necessário */
+    margin: 0 auto; /* Centraliza a imagem dentro da coluna */
+    width: 24px;
+    margin-left: 345px;
+    margin-top: 100px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o conteúdo que ocupa o espaço flexível */
+.content {
+  flex: 1;
+  grid-row: 2 / 3; /* Conteúdo na linha do meio */
+}
+
+.informacoes{
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Estilo para o formulário de login */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff; /* Cor de fundo clara para o formulário */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form input[type="text"], 
+.form input[type="email"], 
+.form input[type="password"] {
+  width: 100%;
+  max-width: 350px;
+  margin: 10px 0;
+  padding: 15px;
+  border: 2px solid #2652a9; /* Borda dos campos de entrada */
+  border-radius: 100px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form input[type="text"]:focus, 
+.form input[type="email"]:focus, 
+.form input[type="password"]:focus {
+  border-color: #1a3c6c; /* Cor de foco mais escura */
+  outline: none;
+}
+
+.form button {
+  min-width: 300px;
+  min-height: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(38,82,169,1) 0%, rgba(38,82,169,0.8) 100%);
+  border: none;
+  border-radius: 100px;
+  box-shadow: 12px 12px 24px rgba(38,82,169,.64);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form button:hover {
+  color: #ffffff;
+  background: #1a3c6c; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-4px);
+}
+
+/* Estilo para o botão "Continue com Google" */
+.continue1 {
+  background: #ffffff;
+  border: 2px solid #2652a9; /* Borda do botão */
+  color: #2652a9; /* Cor do texto */
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.continue1 img {
+  margin-right: 10px;
+}
+
+.continue1:hover {
+  background: #2652a9;
+  color: #ffffff;
+}
+
+/* Estilo específico para a página de login */
+.login-page {
+  width: 400px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #2652a9; /* Cor dos links na mensagem */
+  text-decoration: none;
+}
+
+.form .register-form {
+  display: none;
+}
+
+/* Classes especificas e especializadas */
+
+.texto{
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.banner {
+  width: 850px; 
+  height: 350px;
+  display: block; 
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*classes do cabeçalho */
+
+.logo-menu {
+  width: 150px;
+}
+
+.nav-start {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+}
+
+.nav-end img {
+  width: 40px; /* Ajuste de tamanho da imagem, se necessário */;
+  border-radius: 50%; /* Para imagem circular */
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.nav-center a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Fim das classes de cabeçalho*/
+
+/* Classes de Perfil */
+
+.perfil {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.perfil img {
+  width: 10%; /* Tamanho da imagem de perfil */
+  border-radius: 50%; /* Para imagem circular */
+}
+
+.perfil h1 {
+  font-size: 300%;
+  color: #2652a9;
+  margin-top: 10px;
+}
+
+.perfil-page {
+  width: 400px;
+  margin: auto;
+  padding: 5% 0 0;
+}
+
+.perfil-mostrar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff; /* Cor de fundo clara para o formulário */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-fotos {
+  width: 100%;
+}
+
+.perfil-imgs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.perfil-imgs img {
+  width: 24px; /* Tamanho dos ícones */
+  margin-right: 10px;
+}
+
+.perfil-imgs p {
+  font-size: 18px;
+  color: #333333;
+}
+
+.btn-logout {
+  background-color: #2652a9; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #c9302c; /* Cor de fundo ao passar o mouse */
+}
+
+/* Fim das classes de perfil */
+
+
+
+/* Ids especificos */
