@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Site;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Usuario;
 
 class LoginController extends Controller
 {
@@ -19,7 +19,7 @@ class LoginController extends Controller
         // compara email e pass de ‘users’ com
         // email e senha digitado
 
-        If (Auth::attempt( ['username' => $dados['username'], 'password' => $dados['password']])) {
+        If (Auth::attempt(['login' => $dados['login'], 'password' => $dados['password']])) {
             // redireciona para a home, mas agora, logado !
             return redirect()->route('site.home');
         } else { 
@@ -29,7 +29,7 @@ class LoginController extends Controller
     }
 
     public function sair() {
-        Auth::logout();
+        Auth::logout(); 
         return redirect()->route('site.home');
     }
 
@@ -38,13 +38,13 @@ class LoginController extends Controller
 
         if ($dados['password'] == $dados['check_password']) {
             $user = [
-                'name' => $dados['name'],
-                'username' => $dados['username'],
+                'nome' => $dados['nome'],
+                'login' => $dados['login'],
                 'email' => $dados['email'],
                 'password' => bcrypt($dados['password']), 
             ];
     
-            if (User::create($user)) {
+            if (Usuario::create($user) == true) {
                 return redirect()->route('site.login')->withErrors(['msg' => 'Conta criada.']);
             } else { 
                 return redirect()->route('site.login')->withErrors(['msg' => 'Erro na criação do usuário.']);

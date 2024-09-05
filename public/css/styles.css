@@ -388,5 +388,75 @@ margin-top: 5%;
 /* Fim das classes de perfil */
 
 
+/* Classes de Tabela (Crud) */
+
+table {
+  border-collapse: collapse ;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+td {
+  word-wrap: break-word;
+
+
+}
+
+.cabecalho-tabela {
+  border-collapse: collapse;
+  border: none;
+}
+
+.btn-alterar{
+  border: 2px solid lightblue;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: skyblue;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-alterar:hover{
+  background-color: #2652a9;
+}
+
+.btn-excluir{
+  border: 2px solid darkred;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-excluir:hover{
+  background-color: red;
+}
+
+.btn-adicionar{
+  border: 2px solid greenyellow;
+  border-radius: 0;
+  padding: 10px 20px;
+  background-color: greenyellow;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-adicionar:hover{
+  background-color: green;
+}
 
 /* Ids especificos */
+

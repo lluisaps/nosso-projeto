@@ -17,7 +17,7 @@
     <div class="container" style="background-color: white;">
         <h3 class="center">Editado Usuario</h3>
         <div class="row">
-            <form class="" action="{{route('admin.usuarios.atualizar', $linha->id)}}"
+            <form class="" action="{{ route('admin.usuarios.atualizar', $linha->id)}}"
                 method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input type="hidden" name="_method" value="put">

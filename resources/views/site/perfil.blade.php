@@ -17,7 +17,7 @@
                 {{ csrf_field() }}
                 <label for="foto-perfil">
                     @if(Auth::user()->foto_perfil)
-                        <img src="data:image/jpeg;base64,{{ base64_encode(Auth::user()->foto_perfil) }}" alt="Foto de perfil">
+                        <img src="{{ asset('img/fotoPerfil/foto_perfil_' + Auth::user()->id_usuario) }}" alt="Foto de perfil">
                     @else
                         <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão">
                     @endif
@@ -45,7 +45,7 @@
                 <div class="perfil-fotos">
                     <div class="perfil-imgs">
                         <img src="{{ asset('img/icons/avatar.png') }}">
-                        <p>&ensp; Nome: {{ Auth::user()->name }}</p>
+                        <p>&ensp; Nome: {{ Auth::user()->nome }}</p>
                     </div>
                     <div class="perfil-imgs">
                         <img src="{{ asset('img/icons/email.png') }}">

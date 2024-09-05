@@ -1,14 +1,14 @@
 <div class="input-field">
-    <input type="text" name="name" value="{{ isset($linha->name) ? $linha->name : ''}}" placeholder="Name">
+    <input type="text" name="nome" value="{{ isset($linha->name) ? $linha->name : ''}}" placeholder="Name">
 </div>
 <div class="input-field">
-    <input type="text" name="username" value="{{ isset($linha->username) ? $linha->username : '' }}" placeholder="Username">
+    <input type="text" name="login" value="{{ isset($linha->username) ? $linha->username : '' }}" placeholder="Username">
 </div>
 <div class="input-field">
     <input type="email" name="email" value="{{isset($linha->email) ? $linha->email : ''}}" placeholder="Email">
 </div>
 <div class="input-field">
-    <input type="password" name="password" value="{{isset($linha->password) ? $linha->password : ''}}" placeholder="Senha">
+    <input type="password" name="senha" value="{{isset($linha->password) ? $linha->password : ''}}" placeholder="Senha">
 </div>
 
 <div class="file-field input-field">
@@ -25,7 +25,7 @@
 
 @if(isset($linha->foto_perfil))
     <div class="input-field">
-        <img src="data:image/jpeg;base64,{{ base64_encode( $linha->foto_perfil) }}" width="150" alt="Vazio">
+        <img src="{{ asset('img/fotoPerfil/foto_perfil_' + $linha->$id) }}" width="150" alt="Vazio">
     </div>
 @else
     <div class="input-field">

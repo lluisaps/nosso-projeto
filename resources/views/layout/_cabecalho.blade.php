@@ -23,6 +23,9 @@
         <li class="nav-center"><a href="{{ route('site.home') }}">Home</a></li>
         <li class="nav-center"><a href="{{ route('site.doc') }}">Analisar Documentos</a></li>
         <li class="nav-center"><a href="{{ route('site.sobre') }}">Sobre</a></li>
+        @if(Auth::user()->admin == true)
+            <li class="nav-center"><a href="{{ route('admin.usuarios.index')}}">Crud</a></li>
+        @endif
         <a href="{{ route('site.home') }}"><img class="logo-menu" src="{{ asset('img/icons/logo.png') }}" alt="Logo"></a>
         
     </ul>

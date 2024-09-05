@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Usuario;
+
 
 class UsuarioController extends Controller
 {
     public function index () {
-        $rows = User::all();
+        $rows = Usuario::all();
         return view('admin.usuarios.index', compact('rows'));
     }
 
@@ -23,29 +24,29 @@ class UsuarioController extends Controller
 
         if($req->hasFile('foto_perfil')) {
             if($req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
-                // $imagem = $req->file('arquivo');
-                // $num = rand(1,9999);
-                // $dir = "img/usuarios/";
-                // $ex = $imagem->guessClientExtension();
-                // $nomeImagem = "imagem_".$num.".".$ex;
-                // $imagem->move($dir,$nomeImagem);
-                // $dados['imagem'] = $dir."/".$nomeImagem;
+                $imagem = $req->file('arquivo');
+                $num = $req['id'];
+                $dir = "img/fotoPerfil/";
+                $ex = $imagem->guessClientExtension();
+                $nomeImagem = "foto_perfil_".$num.".".$ex;
+                $imagem->move($dir,$nomeImagem);
+                $dados['foto_perfil'] = $dir."/".$nomeImagem;
 
 
-                // Obtendo o conteúdo do arquivo e convertendo para binário
-                $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
+                // // Obtendo o conteúdo do arquivo e convertendo para binário
+                // $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
     
-                // Salvando a imagem diretamente no banco de dados
-                $dados['foto_perfil'] = $imageContent;
+                // // Salvando a imagem diretamente no banco de dados
+                // $dados['foto_perfil'] = $imageContent;
 
-                User::create($dados);
+                Usuario::create($dados);
                 return redirect()->route('admin.usuarios.index');
             } else {
                 return redirect()->route('admin.salvar')->with('error', 'Arquivo invalido');
             }
         }
 
-        User::create($dados);
+        Usuario::create($dados);
         return redirect()->route('admin.usuarios.index');
     }
 
@@ -55,39 +56,39 @@ class UsuarioController extends Controller
 
         if($req->hasFile('foto_perfil')) {
             if($req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
-                // $imagem = $req->file('foto-perfil');
-                // $num = rand(1,9999);
-                // $dir = "img/usuarios/";
-                // $ex = $imagem->guessClientExtension();
-                // $nomeImagem = "imagem_".$num.".".$ex;
-                // $imagem->move($dir,$nomeImagem);
-                // $dados['imagem'] = $dir."/".$nomeImagem;
+                $imagem = $req->file('arquivo');
+                $num = $req['id'];
+                $dir = "img/fotoPerfil/";
+                $ex = $imagem->guessClientExtension();
+                $nomeImagem = "foto_perfil_".$num.".".$ex;
+                $imagem->move($dir,$nomeImagem);
+                $dados['foto_perfil'] = $dir."/".$nomeImagem;
 
                 
     
-                // Obtendo o conteúdo do arquivo e convertendo para binário
-                $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
+                // // Obtendo o conteúdo do arquivo e convertendo para binário
+                // $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
     
-                // Salvando a imagem diretamente no banco de dados
-                $dados['foto_perfil'] = $imageContent;
+                // // Salvando a imagem diretamente no banco de dados
+                // $dados['foto_perfil'] = $imageContent;
 
-                User::find($id)->update($dados);
+                Usuario::find($id)->update($dados);
                 return redirect()->route('admin.usuarios.index');
             } else {
                 return redirect()->route('admin.editar')->with('error', 'Arquivo invalido');
             }
         }
-        User::find($id)->update($dados);
+        Usuario::find($id)->update($dados);
         return redirect()->route('admin.usuarios.index');
     }
 
     public function editar($id) {
-        $linha = User::find($id);
+        $linha = Usuario::find($id);
         return view('admin.usuarios.editar', compact('linha'));
     }
 
     public function excluir($id) {
-        User::find($id)->delete();
+        Usuario::find($id)->delete();
         
         return redirect()->route('admin.usuarios.index'); 
     }
