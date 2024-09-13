@@ -9,7 +9,7 @@ body,
 }
 
 .container {
-	background: #373a47;
+	background: #2652a9; /*alterado por nicole */
 }
 
 /* Classes de cabeçalho */
@@ -26,7 +26,7 @@ body,
 }
 
 .menu-side {
-	background-color: #373a47;
+	background-color: #2652a9; /*alterado por nicole */
     display: none;
     position: absolute;
     top: 60px; /* Ajuste a posição vertical conforme necessário */
@@ -229,16 +229,16 @@ body {
         line-height: 1.0; 
         position: relative;
         margin-left: 150;
-        margin-top: -150px;
+        margin-top: -230px;
     }
 
   .participantes{
-color: rgb(255, 255, 255);
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-text-align: center;
-word-spacing: -1px; 
-line-height: 0.6; 
-/* esse deixa as palavras -1px mais juntinhas(o word-spacing)  att luisa*/
+	color: rgb(255, 255, 255);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-align: center;
+	word-spacing: -1px; 
+	line-height: 0.6; 
+ /* esse deixa as palavras -1px mais juntinhas(o word-spacing)  att luisa*/
   }
   .linksrodape{
     line-height: 1.5; 
