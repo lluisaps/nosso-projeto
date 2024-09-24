@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <!-- Logo e Nome -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 30px;">
+            <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 65px;">
             <span class="ms-2" style="color: white; font-family: 'Verdana', sans-serif; font-weight: bold;">
                 <!-- VERIFICA <span style="color:#8cb1e5;">✔</span> AI -->
             </span>
@@ -20,29 +20,50 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('site.home') }}">
                         <img src="{{ asset('img/icons/casa.png') }}" alt="Home" style="height: 24px;">
                         <span class="ms-2" style="color: white;">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="#sobre">
                         <img src="{{ asset('img/icons/informacoes.png') }}" alt="Sobre" style="height: 24px;">
                         <span class="ms-2" style="color: white;">Sobre</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('site.doc') }}">
                         <img src="{{ asset('img/icons/documento.png') }}" alt="Documentos" style="height: 24px;">
                         <span class="ms-2" style="color: white;">Documentos</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
-                        <img src="{{ asset('img/icons/perfil2.png') }}" alt="Perfil" style="height: 24px;">
-                        <span class="ms-2" style="color: white;">Perfil</span>
+                    <a class="nav-link" href="{{ route('admin.usuarios.index')}}">
+                        <img src="{{ asset('img/icons/documento.png') }}" alt="Crud" style="height: 24px;">
+                        <span class="ms-2" style="color: white;">Crud</span>
                     </a>
                 </li>
+                @if(Auth::user())
+                <li class="nav-start nav-link"> 
+                    <div class="avatar-wrap">
+                      @if(Auth::user()->foto_perfil)
+                          <img class="avatar" id="open-button" src="data:image/jpeg;base64,{{ base64_encode(Auth::user()->foto_perfil) }}" alt="Foto de perfil" height="24px">
+                       @else
+                        <img id="open-button" src="{{ asset('img/icons/perfil2.png') }}" alt="Avatar" class="avatar" height="24px">
+                        <span class="ms-2" style="color: white;">Perfil</span>
+                       @endif
+                       <nav class="menu-side">
+                         <a href="{{ route('site.perfil') }}">Meu Perfil</a>
+                         <a href="{{ route('site.home') }}">Home</a>
+                         <a href="{{ route('site.doc') }}">Ler Documentos</a>
+                         <a href="{{ route('site.sobre') }}">Sobre</a>
+                          <a href="{{ route('login.sair') }}">Sair</a>
+                         </nav>
+                    </div>
+                </li>
+                @elseif(Auth::guest())
+                 <li class="nav-start"><a href="{{ route('site.login') }}">Fazer Login</a></li>
+                @endif
             </ul>
         </div>
     </div>
@@ -50,7 +71,7 @@
 
 <style>
     .navbar-custom {
-        background-color: #213778; /* Cor de fundo azul */
+        background-color: #2652a9; /* Cor de fundo azul */
     }
     .navbar-nav .nav-link {
         color: white;

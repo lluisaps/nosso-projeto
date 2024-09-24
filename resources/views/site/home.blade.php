@@ -50,7 +50,7 @@
     </div>
     <div class="row py-5" style="background-image: url('img/icons/2fundo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div >
-     <h2 class="text-light">UM POUCO SOBRE A <span class="text-primary">VERIFICA AI</span></h2>
+     <h2 class="text-light" section id="sobre">UM POUCO SOBRE A <span class="text-primary">VERIFICA AI</span></h2>
      </div>
     <div class="col-md-6">
         <div style="height: 19em; border-radius: 69px; background-color: blue; text-align: center;">
