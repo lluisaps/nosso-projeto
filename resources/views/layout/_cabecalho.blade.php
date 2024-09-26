@@ -26,7 +26,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#sobre">
+                    <a class="nav-link" href="http://127.0.0.1:8000/#sobre">
                         <img src="{{ asset('img/icons/informacoes.png') }}" alt="Sobre" style="height: 24px;">
                         <span class="ms-2" style="color: white;">Sobre</span>
                     </a>

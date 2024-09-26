@@ -11,25 +11,26 @@
 @section('conteudo')
     <div class="content">
         <div class="login-page" id="home">
+        <img src="{{ asset('img/icons/logo2.png') }}" alt="Logo" class="logo" style="height: 200px"> 
             <header class="codrops-header">
-                <h1>Seja bem-vindo! <span></span></h1>
             </header>
 
             <div class="form">
                 <form class="register-form" action="{{ route('login.registrar') }}" method="POST">
                     {{ csrf_field() }}
                     <h2><i class="fas fa-lock"></i> Cadastrar</h2>
-
                     <input type="text" name="nome" placeholder="Seu nome *" required/>
                     <input type="text" name="login" placeholder="Nome de Usuario *" required/>
                     <input type="email" name="email" placeholder="Email *" required/>
                     <input type="password" name="password" placeholder="Senha *" required/>
                     <input type="password" name="check_password" placeholder="Confirmar Senha *" required/>
 
+                    <div style="display: flex; justify-content: center;">
                     <button type="submit">Criar</button>
+                    </div>
+
                     <p class="message">Já registrado <a href="#" onclick="toggleForms()">Entrar</a></p>
                 </form>
-
                 <form class="login-form" action="{{ route('login.entrar') }}" method="post">
                     {{ csrf_field() }}
                     <h2><i class="fas fa-lock"></i> Login</h2>
@@ -41,22 +42,9 @@
                             {{ $errors->first('msg') }}
                         </div>
                     @endif
-
+                    <div style="text-align: center;">
                     <button type="submit" name="send2" class="button">Entrar</button>
-
-                    <form action="google" method="post">
-                        <div class="row" style="margin-top: 15px;">
-                            <div>
-                                <div class="col-12 center">
-                                    <div class="col-12 center">
-                                        <button class="continue1">
-                                            <img src="{{ asset('img/icons/google.png') }}" style="margin-right: 10px; padding-left: 10px; width: 20px; height: 20px;">
-                                            Continue com Google
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
+                    </div>
                         <p class="message">Não cadastrado? <a href="#" onclick="toggleForms()">Criar uma conta</a></p>
                     </form>
                 </form>

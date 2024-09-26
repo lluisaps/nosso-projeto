@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 offset-md-4 text-center link-footer itens-right">
+        <div class=" text-lighten-4 right">
             <a href="#"><img src="{{ asset('img/icons/seta.png') }}" alt="Seta"></a>
         </div>
     <!-- </div> -->
