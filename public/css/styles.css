@@ -56,8 +56,8 @@
 
 /* Estilo para o rodapé */
 .footer {
-  background: #1d1d1d; /* Cor de fundo escura para contraste com o cabeçalho */
-margin-top: 5%;
+  /* background: #2652a9; Cor de fundo escura para contraste com o cabeçalho */
+ margin-top: 5%;
   color: white;
   padding: 20px;
   text-align: center;
@@ -174,7 +174,7 @@ margin-top: 5%;
 .form button {
   min-width: 300px;
   min-height: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
@@ -184,10 +184,9 @@ margin-top: 5%;
   box-shadow: 12px 12px 24px rgba(38,82,169,.64);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  padding: 10px;
+  padding: 13px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -197,31 +196,6 @@ margin-top: 5%;
   color: #ffffff;
   background: #1a3c6c; /* Cor de fundo ao passar o mouse */
   transform: translateY(-4px);
-}
-
-/* Estilo para o botão "Continue com Google" */
-.continue1 {
-  background: #ffffff;
-  border: 2px solid #2652a9; /* Borda do botão */
-  color: #2652a9; /* Cor do texto */
-  padding: 10px 20px;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.continue1 img {
-  margin-right: 10px;
-}
-
-.continue1:hover {
-  background: #2652a9;
-  color: #ffffff;
 }
 
 /* Estilo específico para a página de login */

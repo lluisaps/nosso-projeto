@@ -11,7 +11,7 @@
 
     </head>
     <body>
-        <div class="container">
+        <!-- <div class="container"> -->
             @include('layout._cabecalho')
             
             <div class="content-wrap">
@@ -21,7 +21,7 @@
             </div>
 
             
-        </div>    
+        <!-- </div>     -->
         @yield('scripts')
     </body>
 </html>

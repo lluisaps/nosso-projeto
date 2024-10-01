@@ -40,7 +40,7 @@ line-height: 0.6;
   .linksrodape{
     line-height: 1.5; 
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 20px;
     color: black;
   
     
@@ -123,7 +123,7 @@ html, body {
   /* Estilo para o rodapé */
   .footer {
     background: #1d1d1d; /* Cor de fundo escura para contraste com o cabeçalho */
-margin-top: 5%;
+    margin-top: 5%;
     color: white;
     padding: 20px;
     text-align: center;
