@@ -1,7 +1,17 @@
 @extends('layout.site')
 
+@section('styles')
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/doc.css') }}">
+@endsection
+
 @section('conteudo')
 <div class="container">
+    <a id="seta"></a>
     <div class="row text-center py-5" style="background-image: url('img/icons/fundoAzul.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="col-md-6" style="margin-top: 6em;">
             <h1 class="text-light"><span class="text-primary" style="font-size: 1.5em !important;">Descubra</span></h1>
