@@ -1,26 +1,50 @@
 @extends('layout.site')
 
 @section('conteudo')
-<div class="container">
-    <div class="row text-center py-5" style="background-image: url('img/icons/fundoAzul.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="col-md-6" style="margin-top: 6em;">
-            <h1 class="text-light"><span class="text-primary" style="font-size: 1.5em !important;">Descubra</span></h1>
-            <h1 class="text-light"><span style="font-size: 1.5em;">Eficiência</span></h1>
-            <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
-            <p class="text-light">na validação dos seus documentos pessoais</p>
-            <div class="d-flex justify-content-center mt-4">
-                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Saiba Mais!</a>
-                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Teste nossa IA</a>
-            </div>
-        </div>
-        <div class="text-center my-5 col-md-6">
-            <div class="floating-image">
-
-                <img src="{{ asset('img/icons/dochome.png') }}" alt="Imagem relacionada à validação de documentos" class="img-fluid">
-            </div>
-        </div>
+<head>
+<style>
+    .video-bg {
+      position: absolute;
+      top: 0;
+      /* left: 0; */
+      /* width: 100%; */
+      /* height: 100%; */
+      object-fit: cover;
+      z-index: -1;
+      padding: 0;
+    }
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      color: white; /* Ajuste a cor do texto conforme necessário */
+    }
+    .background-video-container {
+      position: relative;
+      overflow: hidden;
+      /* height: 100vh; Altera a altura para preencher a altura da viewport */
+    }
+  </style>
+</head>
+<div class="">
+<div class="row text-center  background-video-container">
+    <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
+    <div class="col-md-6 overlay-content" style="margin-top: 6em;">
+      <h1 class="text-light" style="margin-bottom: -0.6em"><span class="text-primary" style="font-size: 2em !important;">Descubra</span></h1>
+      <h1 class="text-light" style="margin-bottom: -0.3em"><span style="font-size: 2em;">Eficiência</span></h1>
+      <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
+      <p class="text-light">na validação dos seus documentos pessoais</p>
+      <div class="d-flex justify-content-center mt-4">
+        <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Saiba Mais!</a>
+        <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Teste nossa IA</a>
+      </div>
     </div>
-    <div class="row text-center py-5" style="background-color: #1a294d;">
+    <div class="text-center my-5 col-md-6 overlay-content">
+      <div class="floating-image">
+        <img src="{{ asset('img/icons/dochome.png') }}" alt="Imagem relacionada à validação de documentos" class="img-fluid">
+      </div>
+    </div>
+  </div>
+    <div class="row text-center " style="background-color: #1a294d;">
         <div class="col">
             <h2 class="text-primary">O QUE FAZEMOS?</h2>
         </div>
@@ -51,8 +75,8 @@
             </div>
         </div>
     </div>
-    <div class="row py-5" style="background-image: url('img/icons/2fundo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <div class="col-md-6 mx-auto">
+    <div class="row py-5" style="background-image: url('{{ asset('img/icons/2fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="col-md-6 mx-auto">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -73,9 +97,9 @@
             </div>
         </div>
         <div class="col text-center" style="align-content: center"> <!--  class="col-md-10 mx-auto mt-5" -->
-        <div class="col-md-10 mx-auto mt-5" style="align-content: center">
-            <h2 class="text-light" id="sobre">UM POUCO SOBRE A <span class="text-primary">VERIFICA AI</span></h2>
-        </div>
+            <div class="col-md-10 mx-auto mt-5" style="align-content: center">
+                <h2 class="text-light" id="sobre">UM POUCO SOBRE A <span class="text-primary">VERIFICA AI</span></h2>
+            </div>
             <p class="text-light">Somos uma equipe de seis estudantes apaixonados por tecnologia e inovação, trabalhando juntos em um projeto que visa facilitar a vida das pessoas.</p>
             <p class="text-light">Nosso foco é o desenvolvimento de uma Inteligência Artificial (IA) capaz de validar documentos pessoais de forma rápida e precisa.</p>
             <p class="text-light">Combinando nossas habilidades em diferentes áreas, desde programação até análise de dados, estamos criando uma solução que torna o processo de verificação de documentos mais eficiente e seguro.</p>
@@ -104,26 +128,8 @@
     </div>
     <div class="col-md-3">
         <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/reservista.png') }}" alt="Declaração Reservista" class="img-fluid mb-2">
-            <h3 class="text-light">Declaração Reservista</h3>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/cpf.png') }}" alt="Cadastro de Pessoa Física (CPF)" class="img-fluid mb-2">
-            <h3 class="text-light">Cadastro de Pessoa Física (CPF)</h3>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/comprovante.png') }}" alt="Comprovante de Residência" class="img-fluid mb-2">
-            <h3 class="text-light">Comprovante de Residência</h3>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/certidao.png') }}" alt="Certidão de Nascimento" class="img-fluid mb-2">
-            <h3 class="text-light">Certidão de Nascimento</h3>
+            <img style="height: 9em;" src="{{ asset('img/icons/cpf.png') }}" alt="Cadastro de Pessoas Físicas (CPF)" class="img-fluid mb-2">
+            <h3 class="text-light">Cadastro de Pessoas Físicas (CPF)</h3>
         </div>
     </div>
     <div class="col-md-3">
@@ -132,12 +138,60 @@
             <h3 class="text-light">Carteira Nacional de Habilitação (CNH)</h3>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/carteira.png') }}" alt="Carteira de Trabalho" class="img-fluid mb-2">
-            <h3 class="text-light">Carteira de Trabalho</h3>
+</div>
+<div class="row py-5" style="background-image: url('{{ asset('img/icons/fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="col-md-10 mx-auto mt-5">
+        <h2 class="text-light text-center" id="planos">Planos de Assinatura</h2>
+        <p class="text-light text-center">Oferecemos três opções de planos para atender às suas necessidades específicas.</p>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow text-center">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Básico</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">R$29 <small class="text-muted">/ mês</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Validação de até 100 documentos por mês</li>
+                    <li>Suporte via e-mail</li>
+                    <li>Acesso a todos os tipos de validação</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow text-center">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Profissional</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">R$99 <small class="text-muted">/ mês</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Validação de até 500 documentos por mês</li>
+                    <li>Suporte via chat e e-mail</li>
+                    <li>Acesso a todos os tipos de validação</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow text-center">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Corporativo</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">R$199 <small class="text-muted">/ mês</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Validação de até 1000 documentos por mês</li>
+                    <li>Suporte dedicado 24/7</li>
+                    <li>Acesso a todos os tipos de validação</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+            </div>
         </div>
     </div>
 </div>
-
+</div>
 @endsection
