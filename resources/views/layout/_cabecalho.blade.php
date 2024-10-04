@@ -57,12 +57,12 @@
                          <a href="{{ route('site.home') }}">Home</a>
                          <a href="{{ route('site.doc') }}">Ler Documentos</a>
                          <a href="http://127.0.0.1:8000/#sobre">Sobre</a>
-                          <a href="{{ route('login.sair') }}">Sair</a>
+                         <a href="{{ route('login.sair') }}">Sair</a>
                          </nav>
                     </div>
                 </li>
                 @elseif(Auth::guest())
-                 <li class="nav-start"><a href="{{ route('site.login') }}">Fazer Login</a></li>
+                 <li class="nav-start nav-link"><a href="{{ route('site.login') }}">Fazer Login</a></li>
                 @endif
             </ul>
         </div>

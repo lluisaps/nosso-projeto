@@ -15,13 +15,13 @@
         <a id="seta"></a>
         <header class="codrops-header">
             <br><br><br><br><br><br><br><br><br><br>
-            <h1>Adicione seu arquivo abaixo <span></span></h1>
+            <h1>Adicione seu arquivo abaixo: <span></span></h1>
             <p>A leitura da IA pode demorar algum tempo. <br></p>
             <br><br><br><br><br><br>
             <div class="wrap">
-                <button class="button">Documentos Aqui</a>
+                <button class="button">Documentos Aqui!</a>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </header>
     </div>
 @endsection
