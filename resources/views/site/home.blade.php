@@ -6,11 +6,11 @@
         <div class="col-md-6" style="margin-top: 6em;">
             <h1 class="text-light"><span class="text-primary" style="font-size: 1.5em !important;">Descubra</span></h1>
             <h1 class="text-light"><span style="font-size: 1.5em;">Eficiência</span></h1>
-            <p class="text-light">da inteligência artificial</p>
+            <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
             <p class="text-light">na validação dos seus documentos pessoais</p>
             <div class="d-flex justify-content-center mt-4">
-                <a href="#" class="btn btn-primary btn-lg mx-2">Saiba Mais!</a>
-                <a href="#" class="btn btn-secondary btn-lg mx-2">Teste nossa IA</a>
+                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Saiba Mais!</a>
+                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Teste nossa IA</a>
             </div>
         </div>
         <div class="text-center my-5 col-md-6">
