@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <!-- Logo e Nome -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 65px;">
+            <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 68px;">
             <span class="ms-2" style="color: white; font-family: 'Verdana', sans-serif; font-weight: bold;">
                 <!-- VERIFICA <span style="color:#8cb1e5;">✔</span> AI -->
             </span>
@@ -56,13 +56,13 @@
                          <a href="{{ route('site.perfil') }}">Meu Perfil</a>
                          <a href="{{ route('site.home') }}">Home</a>
                          <a href="{{ route('site.doc') }}">Ler Documentos</a>
-                         <a href="{{ route('site.sobre') }}">Sobre</a>
-                          <a href="{{ route('login.sair') }}">Sair</a>
+                         <a href="http://127.0.0.1:8000/#sobre">Sobre</a>
+                         <a href="{{ route('login.sair') }}">Sair</a>
                          </nav>
                     </div>
                 </li>
                 @elseif(Auth::guest())
-                 <li class="nav-start"><a href="{{ route('site.login') }}">Fazer Login</a></li>
+                 <li class="nav-start nav-link"><a href="{{ route('site.login') }}">Fazer Login</a></li>
                 @endif
             </ul>
         </div>
