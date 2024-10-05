@@ -33,9 +33,13 @@
       overflow: hidden;
       /* height: 100vh; Altera a altura para preencher a altura da viewport */
     }
+
+    .containerHome {
+     
+}
   </style>
 </head>
-<div class="">
+<div style="width: 100vw;">
 <a id="seta"></a>
 <div class="row text-center  background-video-container">
     <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
@@ -145,7 +149,7 @@
     </div>
     <div class="col-md-3">
         <div class="p-4">
-            <img style="height: 9em;" src="{{ asset('img/icons/cnh.png') }}" alt="Carteira Nacional de Habilitação (CNH)" class="img-fluid mb-2">
+            <img style="height: 9em;" src="{{ asset('img/icons/cpf.png') }}" alt="Carteira Nacional de Habilitação (CNH)" class="img-fluid mb-2">
             <h3 class="text-light">Carteira Nacional de Habilitação (CNH)</h3>
         </div>
     </div>
