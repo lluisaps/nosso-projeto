@@ -1,5 +1,14 @@
 @extends('layout.site')
 
+@section('styles')
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/doc.css') }}">
+@endsection
+
 @section('conteudo')
 <head>
 <style>
@@ -27,6 +36,7 @@
   </style>
 </head>
 <div class="">
+<a id="seta"></a>
 <div class="row text-center  background-video-container">
     <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
     <div class="col-md-6 overlay-content" style="margin-top: 6em;">
@@ -140,7 +150,7 @@
         </div>
     </div>
 </div>
-<div class="row py-5" style="background-image: url('{{ asset('img/icons/fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<div class="row py-5" style="background-image: url('{{ asset('img/icons/fundoAzul.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="col-md-10 mx-auto mt-5">
         <h2 class="text-light text-center" id="planos">Planos de Assinatura</h2>
         <p class="text-light text-center">Oferecemos três opções de planos para atender às suas necessidades específicas.</p>

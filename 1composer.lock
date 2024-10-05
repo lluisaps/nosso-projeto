@@ -1052,8 +1052,6 @@
         },
         {
             "name": "laravel/framework",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "version": "v11.25.0",
             "source": {
                 "type": "git",
@@ -1064,26 +1062,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/b487a9089c0b1c71ac63bb6bc44fb4b00dc6da2e",
                 "reference": "b487a9089c0b1c71ac63bb6bc44fb4b00dc6da2e",
-=======
-            "version": "v11.23.4",
-=======
-            "version": "v11.25.0",
->>>>>>> nicole_sprint8
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "b487a9089c0b1c71ac63bb6bc44fb4b00dc6da2e"
-            },
-            "dist": {
-                "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/laravel/framework/zipball/08b46ae7be52f71688196f98556d21cb2ec799b6",
-                "reference": "08b46ae7be52f71688196f98556d21cb2ec799b6",
->>>>>>> nicole_sprint8
-=======
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b487a9089c0b1c71ac63bb6bc44fb4b00dc6da2e",
-                "reference": "b487a9089c0b1c71ac63bb6bc44fb4b00dc6da2e",
->>>>>>> nicole_sprint8
                 "shasum": ""
             },
             "require": {
@@ -1188,15 +1166,7 @@
                 "league/flysystem-sftp-v3": "^3.0",
                 "mockery/mockery": "^1.6",
                 "nyholm/psr7": "^1.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
                 "orchestra/testbench-core": "^9.5",
-=======
-                "orchestra/testbench-core": "^9.4.0",
->>>>>>> nicole_sprint8
-=======
-                "orchestra/testbench-core": "^9.5",
->>>>>>> nicole_sprint8
                 "pda/pheanstalk": "^5.0",
                 "phpstan/phpstan": "^1.11.5",
                 "phpunit/phpunit": "^10.5|^11.0",
@@ -1255,14 +1225,7 @@
                     "src/Illuminate/Filesystem/functions.php",
                     "src/Illuminate/Foundation/helpers.php",
                     "src/Illuminate/Log/functions.php",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "src/Illuminate/Support/functions.php",
-=======
->>>>>>> nicole_sprint8
-=======
-                    "src/Illuminate/Support/functions.php",
->>>>>>> nicole_sprint8
                     "src/Illuminate/Support/helpers.php"
                 ],
                 "psr-4": {
@@ -1294,15 +1257,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
             "time": "2024-09-26T11:21:58+00:00"
-=======
-            "time": "2024-09-12T14:57:48+00:00"
->>>>>>> nicole_sprint8
-=======
-            "time": "2024-09-26T11:21:58+00:00"
->>>>>>> nicole_sprint8
         },
         {
             "name": "laravel/prompts",
@@ -5907,8 +5862,6 @@
         },
         {
             "name": "laravel/sail",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "version": "v1.33.0",
             "source": {
                 "type": "git",
@@ -5919,26 +5872,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/d54af9d5745e3680d8a6463ffd9f314aa53eb2d1",
                 "reference": "d54af9d5745e3680d8a6463ffd9f314aa53eb2d1",
-=======
-            "version": "v1.32.0",
-=======
-            "version": "v1.33.0",
->>>>>>> nicole_sprint8
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/sail.git",
-                "reference": "d54af9d5745e3680d8a6463ffd9f314aa53eb2d1"
-            },
-            "dist": {
-                "type": "zip",
-<<<<<<< HEAD
-                "url": "https://api.github.com/repos/laravel/sail/zipball/4a7e41d280861ca7e35710cea011a07669b4003b",
-                "reference": "4a7e41d280861ca7e35710cea011a07669b4003b",
->>>>>>> nicole_sprint8
-=======
-                "url": "https://api.github.com/repos/laravel/sail/zipball/d54af9d5745e3680d8a6463ffd9f314aa53eb2d1",
-                "reference": "d54af9d5745e3680d8a6463ffd9f314aa53eb2d1",
->>>>>>> nicole_sprint8
                 "shasum": ""
             },
             "require": {
@@ -5988,15 +5921,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-<<<<<<< HEAD
-<<<<<<< HEAD
             "time": "2024-09-22T19:04:21+00:00"
-=======
-            "time": "2024-09-11T20:14:29+00:00"
->>>>>>> nicole_sprint8
-=======
-            "time": "2024-09-22T19:04:21+00:00"
->>>>>>> nicole_sprint8
         },
         {
             "name": "mockery/mockery",

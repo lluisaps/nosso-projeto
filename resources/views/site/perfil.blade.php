@@ -7,10 +7,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/doc.css') }}">
 @endsection
 
 @section('conteudo')
     <div class="content">
+        <a id="seta"></a>
         <br>
         <div class="perfil">
             <form action="{{ route('site.atualizarFoto') }}" method="POST" enctype="multipart/form-data">

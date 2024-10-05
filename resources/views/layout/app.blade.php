@@ -14,7 +14,7 @@
 <body>
    
 
-    <div class="">
+    <div class="" style="background: black">
         @yield('content')
     </div>
 
