@@ -11,14 +11,14 @@
 @section('conteudo')
     <div class="content">
         <div class="login-page" id="home">
-        <img src="{{ asset('img/icons/logo2.png') }}" alt="Logo" class="logo" style="height: 200px"> 
+        <img src="{{ asset('img/icons/logo2.png') }}" alt="Logo" class="logo" style="height: 450px "> 
             <header class="codrops-header">
             </header>
 
             <div class="form">
                 <form class="register-form" action="{{ route('login.registrar') }}" method="POST">
                     {{ csrf_field() }}
-                    <h2><i class="fas fa-lock"></i> Cadastrar</h2>
+                    <h2><i class="message"></i> Cadastrar</h2>
                     <input type="text" name="nome" placeholder="Seu nome *" required/>
                     <input type="text" name="login" placeholder="Nome de Usuario *" required/>
                     <input type="email" name="email" placeholder="Email *" required/>
@@ -33,7 +33,7 @@
                 </form>
                 <form class="login-form" action="{{ route('login.entrar') }}" method="post">
                     {{ csrf_field() }}
-                    <h2><i class="fas fa-lock"></i> Login</h2>
+                    <h2><i class="message"></i> Login</h2>
                     <input type="text" name="login" placeholder="Nome de Usuario" required />
                     <input type="password" name="password" placeholder="Senha" required/>
 

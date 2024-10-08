@@ -72,6 +72,8 @@ body,
 	transition: transform 0.3s;
 }
 
+/* nao e */
+
 .menu-button::before {
 	position: absolute;
 	top: 0.5em;
