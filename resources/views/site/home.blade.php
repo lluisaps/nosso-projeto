@@ -25,41 +25,100 @@
             margin: 0;
         }
 
-        .overlay-content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            /* Ajuste a cor do texto conforme necessário */
+        .background-video-container {
+    /* height: 100vh; Força a ocupação da tela inteira */
+    /* height: 83vh;
+    margin-top: -24vh; */
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        .background-video-container {
-            position: relative;
-            overflow: hidden;
-            /* height: 100vh; Altera a altura para preencher a altura da viewport */
+        .content-wrap {
+    width: 100%;
+    height: 100vh; /* 100% da altura da viewport */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.botao_home:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .floating-image img {
+        max-width: 80%;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
         }
+        50% {
+            transform: translateY(-5vh);
+        }
+    }
+
     </style>
 </head>
 <a id="seta"></a>
-<div style="width: 100vh;">
+<div>
     <div class="row text-center  background-video-container">
         <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
-        <div class="col-md-6 overlay-content" style="margin-top: 6em;">
-            <h1 class="text-light" style="margin-bottom: -0.6em"><span class="text-primary" style="font-size: 2em !important;">Descubra</span></h1>
-            <h1 class="text-light" style="margin-bottom: -0.3em"><span style="font-size: 2em;">Eficiência</span></h1>
-            <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
-            <p class="text-light">na validação dos seus documentos pessoais</p>
-            <div class="d-flex justify-content-center mt-4">
-                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Saiba Mais!</a>
-                <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Teste nossa IA</a>
-            </div>
-        </div>
-        <div class="text-center my-5 col-md-6 overlay-content">
-            <div class="floating-image">
-                <img src="{{ asset('img/icons/dochome.png') }}" alt="Imagem relacionada à validação de documentos" class="img-fluid">
-            </div>
-        </div>
+        <div class="col-md-7 overlay-content" style="margin-top: 6em; text-align: center;">
+    <h1 class="text-light" style="margin-bottom: -0.6em;">
+        <span class="text-primary" style="font-size: 2.5em !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+            Descubra
+        </span>
+    </h1>
+    <h1 class="text-light" style="margin-bottom: -0.3em;">
+        <span style="font-size: 2.5em; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+            Eficiência
+        </span>
+    </h1>
+    <p style="font-size: 2.2em; color: #81A9FF; margin-bottom: -0.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.3);">
+        da inteligência artificial
+    </p>
+    <p class="text-light" style="font-size: 1.2em; margin-top: 1em;">
+        na validação dos seus documentos pessoais
+    </p>
+    <div class="d-flex justify-content-center mt-4">
+        <a href="http://127.0.0.1:8000/#planos" class="botao_home btn btn-primary btn-lg mx-2" style="background: linear-gradient(45deg, #1e90ff, #073763); border-radius: 1.5em; padding: 0.75em 2.5em; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+            Saiba Mais!
+        </a>
+        <a href="{{ route('site.doc') }}" class="botao_home btn btn-primary btn-lg mx-2" style="background: linear-gradient(45deg, #1e90ff, #073763); border-radius: 1.5em; padding: 0.75em 2.5em; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+            Teste nossa IA
+        </a>
     </div>
-    <div class="row text-center " style="background-color: #1a294d;">
+</div>
+<div class="text-center my-5 col-md-4 overlay-content">
+    <div class="" style="margin-top: 5vh; padding: 0">
+        <img src="{{ asset('img/icons/robozinho.png') }}" alt="Imagem relacionada à validação de documentos" class="img-fluid" style="animation: float 6s ease-in-out infinite;">
+    </div>
+</div>
+    </div>
+    <!-- <div style="margin-top: 6vh;"> -->
+    <div class="row text-center" style="background-color: #1a294d;">
         <div class="col">
             <h2 class="text-primary">O QUE FAZEMOS?</h2>
         </div>
@@ -90,6 +149,7 @@
             </div>
         </div>
     </div>
+    <!-- </div> -->
     <div class="row py-5" style="background-image: url('{{ asset('img/icons/2fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="col-md-6 mx-auto">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
@@ -129,33 +189,28 @@
     </div>
 
     <div class="row text-center py-4" style="background-color: #1a294d;">
-        <div class="col-md-3">
-            <div class="p-4">
-                <img style="height: 9em;" src="{{ asset('img/icons/titulo.png') }}" alt="Título de Eleitor" class="img-fluid mb-2">
-                <h3 class="text-light">Título de Eleitor</h3>
-            </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="p-4">
                 <img style="height: 9em;" src="{{ asset('img/icons/rg.png') }}" alt="Registro Geral (RG)" class="img-fluid mb-2">
                 <h3 class="text-light">Registro Geral (RG)</h3>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="p-4">
                 <img style="height: 9em;" src="{{ asset('img/icons/cpf.png') }}" alt="Cadastro de Pessoas Físicas (CPF)" class="img-fluid mb-2">
                 <h3 class="text-light">Cadastro de Pessoas Físicas (CPF)</h3>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="p-4">
                 <img style="height: 9em;" src="{{ asset('img/icons/cnh.png') }}" alt="Carteira Nacional de Habilitação (CNH)" class="img-fluid mb-2">
                 <h3 class="text-light">Carteira Nacional de Habilitação (CNH)</h3>
             </div>
         </div>
     </div>
-    <div class="row py-5" style="background-image: url('{{ asset('img/icons/fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="col-md-10 mx-auto mt-5">
+    <div class="row py-5" style="background-image: url('{{ asset('img/icons/fundoAzul.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <a id="planos"></a>
+    <div class="col-md-10 mx-auto mt-5">
             <h2 class="text-light text-center" id="planos">Planos de Assinatura</h2>
             <p class="text-light text-center">Oferecemos três opções de planos para atender às suas necessidades específicas.</p>
         </div>
