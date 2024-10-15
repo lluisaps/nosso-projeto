@@ -53,10 +53,7 @@
                         <img src="{{ asset('img/icons/email.png') }}">
                         <p class="p">&ensp; Email: {{ Auth::user()->email }}</p>
                     </div>
-                    <div class="perfil-imgs">
-                        <img src="{{ asset('img/icons/telefone.png') }}">
-                        <p>&ensp; Telefone: {{ Auth::user()->telefone ?? 'Não informado' }}</p>
-                    </div>
+                   
                 </div>
                 <form action="{{ route('login.sair') }}" method="GET">
                     {{ csrf_field() }}

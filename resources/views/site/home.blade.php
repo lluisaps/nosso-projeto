@@ -44,8 +44,8 @@
 <div class="row text-center  background-video-container">
     <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
     <div class="col-md-6 overlay-content" style="margin-top: 6em;">
-      <h1 class="text-light" style="margin-bottom: -0.6em"><span class="text-primary" style="font-size: 2em !important;">Descubra</span></h1>
-      <h1 class="text-light" style="margin-bottom: -0.3em"><span style="font-size: 2em;">Eficiência</span></h1>
+      <h1 class="text-light" style="margin-bottom: -0.6em"><span class="text-primary" style="font-size: 2em !important;">Descubra </span></h1>
+      <h1 class="text-light" style="margin-bottom: -0.3em"><span style="font-size: 2em;">a Eficiência</span></h1>
       <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
       <p class="text-light">na validação dos seus documentos pessoais</p>
       <div class="d-flex justify-content-center mt-4">
