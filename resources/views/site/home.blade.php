@@ -220,11 +220,12 @@
                     <h4 class="my-0 font-weight-normal">Básico</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">R$29 <small class="text-muted">/ mês</small></h1>
+                    <h1 class="card-title pricing-card-title">R$36 <small class="text-muted">/ mês</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Validação de até 100 documentos por mês</li>
-                        <li>Suporte via e-mail</li>
-                        <li>Acesso a todos os tipos de validação</li>
+                        <li class="text-center">Integração com a IA</li>
+                        <li class="text-center">Upload de até 1000 documentos por mês</li>
+                        <li class="text-center">Suporte via e-mail</li>
+                        <li class="text-center">Acesso a 3 tipos documentos para avalidação</li>
                     </ul>
                     <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
                 </div>
@@ -236,11 +237,13 @@
                     <h4 class="my-0 font-weight-normal">Profissional</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">R$99 <small class="text-muted">/ mês</small></h1>
+                    <h1 class="card-title pricing-card-title">R$140 <small class="text-muted">/ mês</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Validação de até 500 documentos por mês</li>
-                        <li>Suporte via chat e e-mail</li>
-                        <li>Acesso a todos os tipos de validação</li>
+                        <li class="text-center">Integração com a IA</li>
+                        <li class="text-center">Upload de até 10.000 documentos por mês</li>
+                        <li class="text-center">Suporte via chat e e-mail</li>
+                        <li class="text-center">Armazenamento de 5GB dos documentos</li>
+                        <li class="text-center">Acesso a 6 tipos de documento para validação</li>
                     </ul>
                     <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
                 </div>
@@ -252,11 +255,13 @@
                     <h4 class="my-0 font-weight-normal">Corporativo</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">R$199 <small class="text-muted">/ mês</small></h1>
+                    <h1 class="card-title pricing-card-title">R$200 <small class="text-muted">/ mês</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Validação de até 1000 documentos por mês</li>
-                        <li>Suporte dedicado 24/7</li>
-                        <li>Acesso a todos os tipos de validação</li>
+                        <li class="text-center">Integração com a IA</li>
+                        <li class="text-center">Upload de até 50.000 documentos por mês</li>
+                        <li class="text-center">Suporte dedicado 24/7</li>
+                        <li class="text-center">Armazenamento de 20GB dos documentos</li>
+                        <li class="text-center">Acesso a 6 tipos de documento para validação</li>
                     </ul>
                     <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
                 </div>
