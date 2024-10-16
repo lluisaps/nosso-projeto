@@ -23,7 +23,7 @@
              <a href="#seta"><img src="{{ asset('img/icons/seta.png') }}" alt="Seta"></a>
            </div>
         </div> 
-        <div class="text-center p-3"><p>&copy; 2024 Verifica Ai. Todos os direitos reservados. | <a href="#contact" class="text-white text-decoration-none">Contato</a></p></div>
+        <div class="text-center p-3"><p>&copy; 2024 Verifica Ai. Todos os direitos reservados.
     
     <!-- </div> -->
 </div>

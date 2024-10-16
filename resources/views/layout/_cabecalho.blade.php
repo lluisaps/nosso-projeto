@@ -38,24 +38,24 @@
                     </a>
                 </li>
                 @if(Auth::user())
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button">
+                <li class="nav-start nav-link">
+                    <div class="avatar-wrap">
                         @if(Auth::user()->foto_perfil)
-                            <img class="avatar" src="data:image/jpeg;base64,{{ base64_encode(Auth::user()->foto_perfil) }}" alt="Foto de perfil" height="24px">
+                            <img class="avatar" id="open-button" src="data:image/jpeg;base64,{{ base64_encode(Auth::user()->foto_perfil) }}" alt="Foto de perfil" height="24px">
                         @else
-                            <img src="{{ asset('img/icons/perfil2.png') }}" alt="Avatar" class="avatar" height="24px">
+                            <img id="open-button" src="{{ asset('img/icons/perfil2.png') }}" alt="Avatar" class="avatar" height="24px">
+                            <span class="ms-2" style="color: white;">Perfil</span>
                         @endif
-                        <span class="ms-2" style="color: white;">Perfil</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('site.perfil') }}">Meu Perfil</a></li>
-                        <li><a class="dropdown-item" href="{{ route('site.home') }}">Home</a></li>
-                        <li><a class="dropdown-item" href="{{ route('site.doc') }}">Ler Documentos</a></li>
-                        <li><a class="dropdown-item" href="{{ route('login.sair') }}">Sair</a></li>
-                    </ul>
+                        <nav class="menu-side">
+                            <a href="{{ route('site.perfil') }}">Meu Perfil</a>
+                            <a href="{{ route('site.home') }}">Home</a>
+                            <a href="{{ route('site.doc') }}">Ler Documentos</a>
+                            <a href="{{ route('login.sair') }}">Sair</a>
+                        </nav>
+                    </div>
                 </li>
                 @elseif(Auth::guest())
-                 <li class="nav-item"><a class="nav-link" href="{{ route('site.login') }}">Fazer Login</a></li>
+                 <li class="nav-start nav-link"><a href="{{ route('site.login') }}">Fazer Login</a></li>
                 @endif
             </ul>
         </div>
