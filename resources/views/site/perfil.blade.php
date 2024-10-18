@@ -23,20 +23,19 @@
 
         /* Estilizando a área do perfil */
         .perfil-container {
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-            border: 5px solid red; /* Contorno vermelho */
-            padding: 20px; /* Espaço interno */
-            margin-top: 100px; /* Distância do topo da página */
-            margin-bottom: 100px; /* Espaçamento em relação ao rodapé */
+            background-color: #ffffffd4; /* Fundo semi-transparente */
+            padding: 4em; /* Espaço interno */
+            margin-bottom: 5em; /* Espaçamento em relação ao rodapé */
             width: 80%; /* Largura relativa para garantir responsividade */
-            max-width: 600px; /* Largura máxima */
+            max-width: 40em; /* Largura máxima */
             margin-left: auto;
             margin-right: auto;
+            border-radius: 1em;
         }
 
         /* Tornar os elementos internos responsivos */
         .perfil-imgs img {
-            max-width: 100px;
+            max-width: 2em;
             width: 100%;
             height: auto;
         }
@@ -77,7 +76,7 @@
                             <img src="{{ asset('img/fotoPerfil/foto_perfil_' + Auth::user()->id_usuario) }}" alt="Foto de perfil">
                             <p style="font-family: 'Verdana', sans-serif;">&ensp;{{ Auth::user()->nome }}</p>
                         @else
-                            <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão" class="img-fluid" style="width: 100px;">
+                            <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão" class="img-fluid">
                             <p style="font-family: 'Verdana', sans-serif; font-size: 25px;">&ensp;{{ Auth::user()->nome }}</p>
                         @endif
                     </label>
