@@ -6,9 +6,9 @@
 
 ### Tópicos Abordados
 <br>
-- [Autentificação de Documentos com Inteligência Artificial](#autentificacao-de-documentos-com-inteligencia-artificial)
+ #[Autentificação de Documentos com Inteligência Artificial](#autentificacao-de-documentos-com-inteligencia-artificial)
 <br>
-- [Funcionalidades do Projeto](#funcionalidades-do-projeto)
+#[Funcionalidades do Projeto](#funcionalidades-do-projeto)
 <br>
 - [Aplicação](#aplicacao-do-verifica-ai)
 <br>
@@ -37,9 +37,9 @@ Este projeto tem como objetivo a autentificação de documentos utilizando mecan
 <br><br>
 :heavy_check_mark: `Funcionalidade 3:` Organização de documentos pessoais de uma forma prática que se adequa às suas necessidades.
 
-<br><br><br>
-<br><br><br>
+<br><br>
 <p align="justify"><strong>Aplicação do Verifica AI</strong></p>
+<br>
 Para que o acesso da verificação de documentos pudesse ser realizada de maneira fácil a ágil, colocamos nosso site online.
 Assim inúmeros usuários podem se acessá-lo e ter a experiência de agilidade no dia a dia.
 
