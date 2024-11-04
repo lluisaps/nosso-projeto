@@ -7,19 +7,21 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/doc.css') }}">
 @endsection
 
 @section('conteudo')
-    <div class="content">
+    <div style="background-color:#202c4c">
+        <a id="seta"></a>
         <br>
         <div class="perfil">
             <form action="{{ route('site.atualizarFoto') }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <label for="foto-perfil">
                     @if(Auth::user()->foto_perfil)
-                        <img src="{{ asset('img/fotoPerfil/foto_perfil_' + Auth::user()->id_usuario) }}" alt="Foto de perfil">
+                        <img src="{{ asset(Auth::user()->foto_perfil) }}" alt="Foto de perfil" style="width:200px">
                     @else
-                        <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão">
+                        <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão" style="width:200px">
                     @endif
                 </label>
                 <input type="file" id="foto-perfil" name="foto_perfil" accept="image/*" style="display: none;" onchange="this.form.submit()">

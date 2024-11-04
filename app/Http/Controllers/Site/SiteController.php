@@ -29,23 +29,76 @@ class SiteController extends Controller
         return view("site.doc");
     }
 
+    public function resultado () {
+        return view("site.resultado");
+    }
+
+    public function upload (Request $request) {
+
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        if ($request->file('image')) {
+            $image = $request->file('image');
+            $path = $image->store('images', 'public'); // Salva na pasta "images" dentro de "storage/app/public"
+            $imageName = $image->hashName();  // Obtenha o nome do arquivo
+ 
+            $imageDir = storage_path('app/public/images/');
+
+            $pythonScriptPath = base_path('resources/python/predict.py');
+
+            $command = escapeshellcmd("python3 " . $pythonScriptPath . " " . $imageName . " " . $imageDir);
+            $output = shell_exec($command);
+
+            // Adicione depuração
+            if ($output === null) {
+                return back()->withErrors('Erro ao executar o script Python.');
+            }
+
+            // Decodifica a saída JSON do Python
+            $predictions = json_decode($output, true);
+
+            // Verifique se as previsões estão sendo retornadas
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                return back()->withErrors('Erro ao decodificar JSON: ' . json_last_error_msg());
+            }
+
+            // Captura as previsões e exibe na página
+            return view('site.resultado', ['predictions' => $predictions, 'imagePath' => $path]);
+        }
+        return back()->withErrors('Erro ao enviar a imagem.');
+    }
+
     public function atualizarFoto(Request $req)
     {
-        if( $req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
-            $imagem = $req->file('arquivo');
-            $num = $req['id'];
+        if($req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
+
+            // Obtém o arquivo da imagem
+            $imagem = $req->file('foto_perfil');
+
+            // Obtém o ID do usuário autenticado
+            $num = Auth::user()->id;
+
+            // Define o diretório e o nome do arquivo
             $dir = "img/fotoPerfil/";
-            $ex = $imagem->guessClientExtension();
-            $nomeImagem = "foto_perfil_".$num.".".$ex;
-            $imagem->move($dir,$nomeImagem);
-            $dados['imagem'] = $dir."/".$nomeImagem;
+            $ex = $imagem->guessClientExtension(); // Obtém a extensão correta
+            $nomeImagem = "foto_perfil_".$num.".".$ex; // Concatena o nome do arquivo com o ID do usuário
 
-            
-            // Obtendo o conteúdo do arquivo e convertendo para binário
-            $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
+            // Caminho completo da nova imagem
+            $imagePath = $dir . $nomeImagem;
 
-            // Salvando a imagem diretamente no banco de dados
-            Auth::user()->foto_perfil = $imageContent;
+            // Verifica se já existe uma imagem antiga e a exclui
+            $imagemAntiga = Auth::user()->foto_perfil;
+            if ($imagemAntiga && file_exists($imagemAntiga)) {
+                unlink($imagemAntiga); // Remove a imagem antiga
+            }
+
+            // Move a nova imagem para o diretório
+            $imagem->move($dir, $nomeImagem);
+
+            // Atualiza o caminho da imagem no banco de dados
+            Auth::user()->foto_perfil = $imagePath;
             Auth::user()->save();
 
             return redirect()->route('site.perfil')->with('success', 'Foto de perfil atualizada com sucesso!');

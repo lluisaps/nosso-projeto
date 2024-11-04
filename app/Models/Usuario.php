@@ -20,13 +20,12 @@ class Usuario extends AuthenticatableModel implements AuthenticatableContract
         'password',
         'foto_perfil',
         'email_verificado',
-        'admin'
     ];
 
     protected $hidden = [
         'password',
-        'remember_token'
-        
+        'remember_token',
+        'admin',
     ];
 
     protected function casts(): array

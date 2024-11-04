@@ -12,14 +12,42 @@
 
 @section('conteudo')
     <div class="content">
+        <a id="seta"></a>
         <header class="codrops-header">
+            <br><br><br><br><br><br><br><br><br><br>
             <h1>Adicione seu arquivo abaixo <span></span></h1>
             <p>A leitura da IA pode demorar algum tempo. <br></p>
             <br><br><br><br><br><br>
             <div class="wrap">
-                <button class="button">Documentos Aqui</a>
+                <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <!-- Botão para escolher arquivo da galeria -->
+                    <label for="file-upload" class="button">Escolher Imagem</label>
+                    <input id="file-upload" type="file" name="image" accept="image/*" style="display:none;" onchange="this.form.submit()">
+                </form>
+
+                <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+
+                    <!-- Botão para capturar foto com a câmera -->
+                    <label for="camera-upload" class="button">Tirar Foto</label>
+                    <input id="camera-upload" type="file" name="image" accept="image/*" capture="camera" style="display:none;" onchange="this.form.submit()">
+                </form>
+            </div>
+
+
+
+            <!-- Exibe os erros de validação -->
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            @endif
         </header>
     </div>
 @endsection

@@ -11,17 +11,16 @@
 
     </head>
     <body>
-        <div class="container">
+        <!-- <div class="container"> -->
             @include('layout._cabecalho')
             
             <div class="content-wrap">
                 @yield('conteudo')
-
                 @include('layout._rodape')
             </div>
 
             
-        </div>    
+        <!-- </div>     -->
         @yield('scripts')
     </body>
 </html>

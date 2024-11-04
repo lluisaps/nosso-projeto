@@ -44,7 +44,7 @@
                     <td>{{ $row->password }}</td>
 
                     @if($row->foto_perfil)
-                        <td><img src="{{ asset('img/fotoPerfil/foto_perfil_' + $row->id_usuario) }}" alt="Foto de perfil"></td>
+                        <td><img src="{{ asset($row->foto_perfil) }}" alt="Foto de perfil"></td>
                     @else
                         <td><img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão"></td>
                     @endif

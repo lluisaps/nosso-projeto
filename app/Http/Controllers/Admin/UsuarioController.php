@@ -24,21 +24,32 @@ class UsuarioController extends Controller
 
         if($req->hasFile('foto_perfil')) {
             if($req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
-                $imagem = $req->file('arquivo');
-                $num = $req['id'];
+                
+                // Obtém o arquivo da imagem
+                $imagem = $req->file('foto_perfil');
+
+                // Obtém o ID do usuário autenticado
+                $num = Usuario::user()->id;
+
+                // Define o diretório e o nome do arquivo
                 $dir = "img/fotoPerfil/";
-                $ex = $imagem->guessClientExtension();
-                $nomeImagem = "foto_perfil_".$num.".".$ex;
-                $imagem->move($dir,$nomeImagem);
-                $dados['foto_perfil'] = $dir."/".$nomeImagem;
+                $ex = $imagem->guessClientExtension(); // Obtém a extensão correta
+                $nomeImagem = "foto_perfil_".$num.".".$ex; // Concatena o nome do arquivo com o ID do usuário
 
+                // Caminho completo da nova imagem
+                $imagePath = $dir . $nomeImagem;
 
-                // // Obtendo o conteúdo do arquivo e convertendo para binário
-                // $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
-    
-                // // Salvando a imagem diretamente no banco de dados
-                // $dados['foto_perfil'] = $imageContent;
+                // Verifica se já existe uma imagem antiga e a exclui
+                $imagemAntiga = Usuario::user()->foto_perfil;
+                if (file_exists(public_path($imagemAntiga))) {
+                    unlink(public_path($imagemAntiga)); // Remove a imagem antiga
+                }
 
+                // Move a nova imagem para o diretório
+                $imagem->move($dir, $nomeImagem);
+
+                // Atualiza o caminho da imagem no banco de dados
+                Usuario::user()->foto_perfil = $imagePath;
                 Usuario::create($dados);
                 return redirect()->route('admin.usuarios.index');
             } else {
@@ -56,22 +67,31 @@ class UsuarioController extends Controller
 
         if($req->hasFile('foto_perfil')) {
             if($req->validate(['foto_perfil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',])) {
-                $imagem = $req->file('arquivo');
-                $num = $req['id'];
+                // Obtém o arquivo da imagem
+                $imagem = $req->file('foto_perfil');
+
+                // Obtém o ID do usuário autenticado
+                $num = Usuario::user()->id;
+
+                // Define o diretório e o nome do arquivo
                 $dir = "img/fotoPerfil/";
-                $ex = $imagem->guessClientExtension();
-                $nomeImagem = "foto_perfil_".$num.".".$ex;
-                $imagem->move($dir,$nomeImagem);
-                $dados['foto_perfil'] = $dir."/".$nomeImagem;
+                $ex = $imagem->guessClientExtension(); // Obtém a extensão correta
+                $nomeImagem = "foto_perfil_".$num.".".$ex; // Concatena o nome do arquivo com o ID do usuário
 
-                
-    
-                // // Obtendo o conteúdo do arquivo e convertendo para binário
-                // $imageContent = file_get_contents($req->file('foto_perfil')->getRealPath());
-    
-                // // Salvando a imagem diretamente no banco de dados
-                // $dados['foto_perfil'] = $imageContent;
+                // Caminho completo da nova imagem
+                $imagePath = $dir . $nomeImagem;
 
+                // Verifica se já existe uma imagem antiga e a exclui
+                $imagemAntiga = Usuario::user()->foto_perfil;
+                if (file_exists(public_path($imagemAntiga))) {
+                    unlink(public_path($imagemAntiga)); // Remove a imagem antiga
+                }
+
+                // Move a nova imagem para o diretório
+                $imagem->move($dir, $nomeImagem);
+
+                // Atualiza o caminho da imagem no banco de dados
+                Usuario::user()->foto_perfil = $imagePath;
                 Usuario::find($id)->update($dados);
                 return redirect()->route('admin.usuarios.index');
             } else {

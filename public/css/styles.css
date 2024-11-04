@@ -56,8 +56,8 @@
 
 /* Estilo para o rodapé */
 .footer {
-  background: #1d1d1d; /* Cor de fundo escura para contraste com o cabeçalho */
-margin-top: 5%;
+  /* background: #2652a9; Cor de fundo escura para contraste com o cabeçalho */
+ margin-top: 5%;
   color: white;
   padding: 20px;
   text-align: center;
@@ -136,17 +136,32 @@ margin-top: 5%;
   text-align: center;
 }
 
+/*Estilo do login */
+.login-page {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  height: 100vh;           /* Faz a página ter a altura total da tela */
+  flex-direction: column;  /* Organiza os itens em coluna */
+}
+
+.logo {
+    max-width: 100%;  /* Impede que a logo ultrapasse os limites do contêiner */
+    height: auto;     /* Ajusta a altura de acordo com a proporção da imagem */
+}
 /* Estilo para o formulário de login */
 .form {
+  width: 400px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 800px;
+  margin:  0 auto 100px;
+  padding: 70px;
   background: #ffffff; /* Cor de fundo clara para o formulário */
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -155,10 +170,12 @@ margin-top: 5%;
 .form input[type="password"] {
   width: 100%;
   max-width: 350px;
-  margin: 10px 0;
-  padding: 15px;
-  border: 2px solid #2652a9; /* Borda dos campos de entrada */
-  border-radius: 100px;
+  margin: 0 0 15px ;
+  margin-bottom: 20px;
+  padding: 14px;
+  background: #f2f2f2;
+  border: 0px solid #2652a9; /* Borda dos campos de entrada */
+  border-radius: 7px;
   font-size: 16px;
   box-sizing: border-box;
   transition: border-color 0.3s ease-in-out;
@@ -174,20 +191,19 @@ margin-top: 5%;
 .form button {
   min-width: 300px;
   min-height: 50px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
   background: linear-gradient(90deg, rgba(38,82,169,1) 0%, rgba(38,82,169,0.8) 100%);
   border: none;
-  border-radius: 100px;
+  border-radius: 7px;
   box-shadow: 12px 12px 24px rgba(38,82,169,.64);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  padding: 10px;
+  padding: 15px;
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -199,31 +215,6 @@ margin-top: 5%;
   transform: translateY(-4px);
 }
 
-/* Estilo para o botão "Continue com Google" */
-.continue1 {
-  background: #ffffff;
-  border: 2px solid #2652a9; /* Borda do botão */
-  color: #2652a9; /* Cor do texto */
-  padding: 10px 20px;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.continue1 img {
-  margin-right: 10px;
-}
-
-.continue1:hover {
-  background: #2652a9;
-  color: #ffffff;
-}
-
 /* Estilo específico para a página de login */
 .login-page {
   width: 400px;
@@ -232,7 +223,7 @@ margin-top: 5%;
 }
 
 .form .message {
-  margin: 15px 0 0;
+  margin: 18px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
@@ -244,6 +235,20 @@ margin-top: 5%;
 
 .form .register-form {
   display: none;
+}
+
+.login-form h2 {
+  text-align: center;      /* Centraliza o texto horizontalmente */
+  margin-bottom: 20px;     /* Ajuste a margem inferior conforme necessário */
+  position: relative;      /* Habilita o uso de "top" */
+  top: -30px;              /* Movimenta o título para cima */
+}
+
+.register-form h2 {
+  text-align: center;      /* Centraliza horizontalmente */
+  margin-bottom: 20px;     /* Espaçamento abaixo do título */
+  position: relative;      /* Permite o uso de 'top' para ajuste fino */
+  top: -20px;              /* Ajusta a posição vertical do título */
 }
 
 /* Classes especificas e especializadas */
