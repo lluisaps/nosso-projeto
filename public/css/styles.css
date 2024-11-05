@@ -411,22 +411,22 @@ td, th {
 
 td {
   word-wrap: break-word;
-
-
 }
 
 .cabecalho-tabela {
   border-collapse: collapse;
   border: none;
+  background-color: #2652a9;
 }
 
 .btn-alterar{
-  border: 2px solid lightblue;
+  border: 2px solid #2652a9;
   border-radius: 0;
   padding: 10px 20px;
-  background-color: skyblue;
+  background-color: #2652a9;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-alterar:hover{
@@ -440,26 +440,29 @@ td {
   background-color: darkred;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-excluir:hover{
-  background-color: red;
+  background-color: darkred;
+  color:#c9302c; /* cor ao passar o mouse em cima*/
 }
 
 .btn-adicionar{
-  border: 2px solid greenyellow;
+  border: 2px solid #2652a9;
   border-radius: 0;
   padding: 10px 20px;
-  background-color: greenyellow;
+  background-color: #2652a9;
   color: white;
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+  text-decoration: none;
 }
 
 .btn-adicionar:hover{
-  background-color: green;
+  background-color: #2652a9;
 }
 
 /* Ids especificos */

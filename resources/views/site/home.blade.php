@@ -82,33 +82,17 @@
     </style>
 </head>
 <a id="seta"></a>
-<div>
-    <div class="row text-center  background-video-container">
-        <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
-        <div class="col-md-7 overlay-content" style="margin-top: 6em; text-align: center;">
-    <h1 class="text-light" style="margin-bottom: -0.6em;">
-        <span class="text-primary" style="font-size: 2.5em !important; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
-            Descubra
-        </span>
-    </h1>
-    <h1 class="text-light" style="margin-bottom: -0.3em;">
-        <span style="font-size: 2.5em; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
-            Eficiência
-        </span>
-    </h1>
-    <p style="font-size: 2.2em; color: #81A9FF; margin-bottom: -0.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.3);">
-        da inteligência artificial
-    </p>
-    <p class="text-light" style="font-size: 1.2em; margin-top: 1em;">
-        na validação dos seus documentos pessoais
-    </p>
-    <div class="d-flex justify-content-center mt-4">
-        <a href="http://127.0.0.1:8000/#planos" class="botao_home btn btn-primary btn-lg mx-2" style="background: linear-gradient(45deg, #1e90ff, #073763); border-radius: 1.5em; padding: 0.75em 2.5em; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-            Saiba Mais!
-        </a>
-        <a href="{{ route('site.doc') }}" class="botao_home btn btn-primary btn-lg mx-2" style="background: linear-gradient(45deg, #1e90ff, #073763); border-radius: 1.5em; padding: 0.75em 2.5em; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s ease;">
-            Teste nossa IA
-        </a>
+<div class="row text-center  background-video-container">
+    <video class="video-bg" src="{{ asset('video/background.mp4') }}" autoplay muted loop></video>
+    <div class="col-md-6 overlay-content" style="margin-top: 6em;">
+      <h1 class="text-light" style="margin-bottom: -0.6em"><span class="text-primary" style="font-size: 2em !important;">Descubra </span></h1>
+      <h1 class="text-light" style="margin-bottom: -0.3em"><span style="font-size: 2em;">a Eficiência</span></h1>
+      <p style="font-size: 2em; color: #81A9FF; margin-bottom: -0.2em">da inteligência artificial</p>
+      <p class="text-light">na validação dos seus documentos pessoais</p>
+      <div class="d-flex justify-content-center mt-4">
+        <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Saiba Mais!</a>
+        <a href="#" class="botao_home btn btn-primary btn-lg mx-2" style="background: #073763; background: linear-gradient(#0000ff, #073763 50%, #0000ff); border-radius: 1em; transition: transform 0.3s ease;">Teste nossa IA</a>
+      </div>
     </div>
 </div>
 <div class="text-center my-5 col-md-4 overlay-content">
