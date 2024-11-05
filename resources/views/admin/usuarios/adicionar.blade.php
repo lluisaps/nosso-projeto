@@ -16,8 +16,9 @@
 
 @section('conteudo')
     <div class="container" style="background-color:white">
-        <h3 class="center">Adicionar Curso</h3>
-        <div class="row">
+        <br><br><br>
+        <h3 class="center">Adicionar Usuário</h3>
+        <div class="row center">
             <form class="" action="{{route('admin.usuarios.salvar')}}" 
                     method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -30,8 +31,34 @@
                 </div>
                 @endif
 
-                <button class="btn light-blue">Salvar</button>
+                <button class="button center">Salvar</button>
             </form>
         </div>
     </div>
+    
+<style>
+
+/* CSS */
+.button {
+   min-width: 100px;
+  min-height: 50px;
+  display: inline-flex;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2652a9;
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(22, 87, 192, 0.64);
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+}
+</style>
 @endsection
