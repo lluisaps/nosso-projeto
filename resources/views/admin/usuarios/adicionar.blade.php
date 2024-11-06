@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}" />
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,8 +17,9 @@
 
 @section('conteudo')
     <div class="container" style="background-color:white">
-        <h3 class="center">Adicionar Curso</h3>
-        <div class="row">
+        <br><br><br>
+        <h3 class="center">Adicionar Usuário</h3>
+        <div class="row center">
             <form class="" action="{{route('admin.usuarios.salvar')}}" 
                     method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
@@ -30,7 +32,7 @@
                 </div>
                 @endif
 
-                <button class="btn light-blue">Salvar</button>
+                <button class="button_crud center">Salvar</button>
             </form>
         </div>
     </div>

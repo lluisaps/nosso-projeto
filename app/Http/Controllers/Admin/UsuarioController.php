@@ -78,6 +78,7 @@ class UsuarioController extends Controller
                 return redirect()->route('admin.editar')->with('error', 'Arquivo invalido');
             }
         }
+
         Usuario::find($id)->update($dados);
         return redirect()->route('admin.usuarios.index');
     }
