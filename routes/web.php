@@ -31,6 +31,14 @@ Route::group(['middleware' => 'auth'],function() {
         ['as' => 'site.doc',
         'uses'=> 'App\Http\Controllers\Site\SiteController@doc']);
 
+    Route::post('/doc/upload',
+        ['as' => 'site.upload',
+        'uses'=> 'App\Http\Controllers\Site\SiteController@upload']);
+
+    Route::post('/resultado',
+        ['as' => 'site.resultado',
+        'uses'=> 'App\Http\Controllers\Site\SiteController@resultado']);
+
     //rotas de admin
 
     Route::get('/admin/usuarios',

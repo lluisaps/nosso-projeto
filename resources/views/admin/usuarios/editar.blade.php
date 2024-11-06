@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}" />
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -31,7 +32,7 @@
                 </div>
                 @endif
 
-                <button class="button center">Atualizar</button>
+                <button class="button_crud center">Atualizar</button>
             </form>
         </div>
     </div>
