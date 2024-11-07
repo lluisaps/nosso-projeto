@@ -10,12 +10,13 @@
 @endsection
 
 @section('conteudo')
+<a id="seta"></a>
 <div class="content">
-    <br>
+    <br><br>
     <h3 style="text-align: center;">Lista de Usuários</h3>
     <br>
-
-    <div class="row bg-primary text-white font-weight-bold py-2 text-center">
+    <!--Cabeçalho-->
+    <div class="row text-white font-weight-bold py-2 text-center" style="background-color: #2652a9;">
         <div class="col-md-1">Id</div>
         <div class="col-md-1">Nome</div>
         <div class="col-md-1">Login</div>
@@ -29,7 +30,7 @@
         <div class="col-md-1">Ações</div>
     </div>
 
-    @foreach($rows as $row)
+    @foreach($rows as $row) <!--Conteúdo-->
     <div class="row text-center align-items-center border-bottom py-2">
         <div class="col-md-1">{{ $row->id }}</div>
         <div class="col-md-1">{{ $row->nome }}</div>
@@ -50,15 +51,15 @@
         <div class="col-md-1">{{ \Carbon\Carbon::parse($row->data_criacao)->format('d/m/Y H:i') }}</div>
         <div class="col-md-1">{{ \Carbon\Carbon::parse($row->data_edicao)->format('d/m/Y H:i') }}</div>
         
-        <div class="col-md-1">
-            <a class="btn btn-sm btn-primary" style="margin-bottom: 1em;" href="{{ route('admin.usuarios.editar', $row->id) }}">Alterar</a>
+        <div class="col-md-1"> <!--Botões-->
+            <a class="btn btn-sm" style="background-color: #2652a9; color:white;" href="{{ route('admin.usuarios.editar', $row->id) }}">Alterar</a>
             <a class="btn btn-sm btn-danger" href="{{ route('admin.usuarios.excluir', $row->id) }}">Excluir</a>
         </div>
     </div>
     @endforeach
 
     <div class="row mt-3">
-        <a class="btn btn-success" style="margin-bottom: 1em;" href="{{ route('admin.usuarios.adicionar') }}">Adicionar</a>
+        <a class="btn-adicionar" href="{{ route('admin.usuarios.adicionar') }}">Adicionar</a>
     </div>
 </div>
 @endsection
