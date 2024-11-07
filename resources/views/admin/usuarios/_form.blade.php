@@ -1,4 +1,3 @@
-
 @if(isset($linha->foto_perfil))
     <div class="input-field">
         <img src="{{ asset('img/fotoPerfil/foto_perfil_' + $linha->$id) }}" width="100" alt="Vazio">
@@ -9,8 +8,8 @@
     </div>
 @endif
 
-<div class="file-field input-field" style="padding-left: 10px;">
-    <div class="button">
+<div class="file-field input-field">
+    <div class="button_crud">
         <span>
             Foto Perfil
         </span>
@@ -30,31 +29,11 @@
 <div class="input-field">
     <input type="password" name="senha" value="{{isset($linha->password) ? $linha->password : ''}}" placeholder="Senha">
 </div>
+<div class="input-field">
+    <p style="text-align: left;">Administrador:</p>
+    <select name="admin" class="browser-default" style="background-color: #2652a9; color: white;">
+        <option value="false" {{ isset($linha->admin) && !$linha->admin ? 'selected' : '' }}>Não</option>
+        <option value="true" {{ isset($linha->admin) && $linha->admin ? 'selected' : '' }}>Sim</option>
+    </select>
+</div>
 
-
-
-<style>
-
-/* CSS */
-.button {
-  min-width: 100px;
-  min-height: 50px;
-  display: inline-flex;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 13px;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1.3px;
-  font-weight: 700;
-  color: #ffffff;
-  background: #2652a9;
-  border: none;
-  border-radius: 1000px;
-  box-shadow: 12px 12px 24px rgba(22, 87, 192, 0.64);
-  cursor: pointer;
-  outline: none;
-  padding: 10px;
-}
-</style>
