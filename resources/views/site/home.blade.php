@@ -269,4 +269,55 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Escolha o Tipo de Pagamento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="paymentForm">
+                    <!-- Campo oculto para identificar o plano selecionado -->
+                    <input type="hidden" name="plan" id="selectedPlan" value="">
+
+                    <!-- Opções de pagamento -->
+                    <div class="form-group">
+                        <label for="paymentType">Tipo de Pagamento:</label>
+                        <select class="form-control" id="paymentType" name="paymentType">
+                            <option value="creditCard">Cartão de Crédito</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="boleto">Boleto Bancário</option>
+                        </select>
+                    </div>
+
+                    <!-- Campos de detalhes de pagamento (exemplo: cartão de crédito) -->
+                    <div id="creditCardDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="cardNumber">Número do Cartão:</label>
+                            <input type="text" class="form-control" id="cardNumber" name="cardNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="expiration">Data de Expiração:</label>
+                            <input type="text" class="form-control" id="expiration" name="expiration" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV:</label>
+                            <input type="text" class="form-control" id="cvv" name="cvv">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmPurchase">Confirmar Compra</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary" data-plan="Básico" data-toggle="modal" data-target="#paymentModal">Assine Agora</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary" data-plan="Profissional" data-toggle="modal" data-target="#paymentModal">Assine Agora</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary" data-plan="Corporativo" data-toggle="modal" data-target="#paymentModal">Assine Agora</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
