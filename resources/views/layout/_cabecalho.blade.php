@@ -6,9 +6,6 @@
         <!-- Logo e Nome -->
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 68px;">
-            <span class="ms-2" style="color: white; font-family: 'Verdana', sans-serif; font-weight: bold;">
-                <!-- VERIFICA <span style="color:#8cb1e5;">✔</span> AI -->
-            </span>
         </a>
 
         <!-- Botão de Menu Responsivo -->
@@ -31,12 +28,14 @@
                         <span class="ms-2" style="color: white;">Documentos</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.usuarios.index')}}">
-                        <img src="{{ asset('img/icons/documento.png') }}" alt="Crud" style="height: 24px;">
-                        <span class="ms-2" style="color: white;">Crud</span>
-                    </a>
-                </li>
+                @if(Auth::check() && Auth::user()->admin)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.usuarios.index') }}">
+                            <img src="{{ asset('img/icons/documento.png') }}" alt="Crud" style="height: 24px;">
+                            <span class="ms-2" style="color: white;">Crud</span>
+                        </a>
+                    </li>
+                @endif
                 @if(Auth::user())
                 <li class="nav-start nav-link">
                     <div class="avatar-wrap">

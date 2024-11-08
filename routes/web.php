@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'],function() {
 
     Route::post('/doc/upload',
         ['as' => 'site.upload',
-        'uses'=> 'App\Http\Controllers\Site\SiteController@upload']);
+        'uses'=> 'App\Http\Controllers\Api\ApiUploadController@uploadImagem']);
 
     Route::post('/resultado',
         ['as' => 'site.resultado',
