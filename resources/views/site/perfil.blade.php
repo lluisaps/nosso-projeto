@@ -73,7 +73,7 @@
                     {{ csrf_field() }}
                     <label for="foto-perfil">
                         @if(Auth::user()->foto_perfil)
-                            <img src="{{ asset('img/fotoPerfil/foto_perfil_' + Auth::user()->id_usuario) }}" alt="Foto de perfil">
+                            <img src="{{ asset('img/fotoPerfil/foto_perfil_') }}" alt="Foto de perfil">
                             <p style="font-family: 'Verdana', sans-serif;">&ensp;{{ Auth::user()->nome }}</p>
                         @else
                             <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão" class="img-fluid">
