@@ -15,6 +15,7 @@
 @endsection
 
 @section('conteudo')
+    <a id="seta"></a>
     <div class="container" style="background-color: white;">
         <br><br><br>
         <h3 class="center">Editar Usuário</h3>
@@ -31,8 +32,8 @@
                     {{ session('error') }}
                 </div>
                 @endif
-
-                <button class="button_crud center">Atualizar</button>
+                <br>
+                <button class="button_crud">Atualizar</button>
             </form>
         </div>
     </div>
