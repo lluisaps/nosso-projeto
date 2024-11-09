@@ -54,7 +54,7 @@
                     </div>
                 </li>
                 @elseif(Auth::guest())
-                 <li class="nav-start nav-link"><a href="{{ route('site.login') }}">Fazer Login</a></li>
+                 <li class="nav-start nav-link"><a style="text-decoration:none; color:white;" href="{{ route('site.login') }}">Fazer Login</a></li>
                 @endif
             </ul>
         </div>
@@ -111,5 +111,6 @@
         border-radius: 50%;
         margin-right: 8px;
     }
+    
 </style>
 @endsection

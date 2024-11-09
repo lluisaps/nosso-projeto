@@ -23,12 +23,12 @@ body,
 .avatar-wrap {
     position: relative;
     display: inline-block;
-    transition: 7s; /* Tempo de transição para o avatar (se necessário) */
+    transition: 8s; /* Tempo de transição para o avatar (se necessário) */
 }
 
 /* Estilo do menu-side antes do hover */
 .menu-side {
-    background-color: #2652a9; /* Alterado por Nicole */
+    background-color: #2652a9; 
     opacity: 0; 
     visibility: hidden; 
     position: absolute;
@@ -55,7 +55,7 @@ body,
 }
 
 .menu-side a:hover {
-    background-color: #575252; /* Alterado por Nicole */
+    background-color: #575252; /* Altera a cor ao passar por cima do menu */
 }
 
 /* fim das classes de cabeçalho */
