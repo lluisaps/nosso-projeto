@@ -6,9 +6,9 @@
 
 ### Tópicos Abordados
 <br>
- #[Autentificação de Documentos com Inteligência Artificial](#autentificacao-de-documentos-com-inteligencia-artificial)
+ - [Autentificação de Documentos com Inteligência Artificial](#autentificacao-de-documentos-com-inteligencia-artificial)
 <br>
-#[Funcionalidades do Projeto](#funcionalidades-do-projeto)
+- [Funcionalidades do Projeto](#funcionalidades-do-projeto)
 <br>
 - [Aplicação](#aplicacao-do-verifica-ai)
 <br>
@@ -42,4 +42,41 @@ Este projeto tem como objetivo a autentificação de documentos utilizando mecan
 <br>
 Para que o acesso da verificação de documentos pudesse ser realizada de maneira fácil a ágil, colocamos nosso site online.
 Assim inúmeros usuários podem se acessá-lo e ter a experiência de agilidade no dia a dia.
+
+<br<br>
+<p align="justify"><strong>Ferramentas Utilizadas AI</strong></p>
+<br>
+Utilizamos para a construção do site o XAMPP, MySQL, Python e também o Visual Studio nas linguagens: PHP, Laravel, CSS, HTML, Bootstrap entre outros.
+
+<br><br>
+<p align="justify"><strong>Acesso ao projeto</strong></p>
+<br>
+Para ter acesso as diversas funções do projeto e a sua construção baixe o arquivo git e estraia de acordo com as especificações presentes no Guia de Instalação.
+
+<br><br>
+<p align="justify"><strong>Abrir Plataforma e Utilizar Mecanismos</strong></p>
+<br>
+Caso queira fazer uso do Software acessa a url: https://projetoscti.com.br/projetoscti31/tcc
+
+<br><br>
+<p align="justify"><strong>Desenvolvedores Responsáveis</strong></p>
+<br>
+Eduarda Moreira - BackEnd
+git: dudamcerri
+<br>
+Lara Santos - FrontEnd
+git: lara011
+<br>
+Luísa Prado - BackEnd
+git: lluisaps
+<br>
+Mariana Godoi - FrontEnd
+git: Mariluzzz
+<br>
+Nicole Salcedo - FrontEnd
+git: nicksalcedo
+<br>
+Victor Hugo Cacimiro - BackEnd
+git: VictorHugoCA
+
 
