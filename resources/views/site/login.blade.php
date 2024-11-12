@@ -12,7 +12,7 @@
 @section('conteudo')
     <div class="content">
         <div class="login-page" id="home">
-        <img src="{{ asset('img/icons/logo2.png') }}" alt="Logo" class="logo" style="height: 450px "> 
+        <img src="{{ asset('img/icons/logo2.png') }}" alt="Logo" class="logo" style="height: 7em "> 
             <header class="codrops-header">
             </header>
 

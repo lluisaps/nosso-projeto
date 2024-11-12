@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\EnsureTokenIsValid;
+use App\Http\Controllers\Site\PagamentoController;
 
-//Rotas de Site
+//Rotas publicas
+
 Route::get('/',
         ['uses'=>'App\Http\Controllers\Site\PublicController@home']);
 
@@ -16,6 +18,8 @@ Route::get('/sobre',
         'uses'=>'App\Http\Controllers\Site\PublicController@sobre']);
 
 Route::middleware(EnsureTokenIsValid::class)->group(function () {
+    //Rotas site
+    
     Route::get('/perfil',
     ['as' =>'site.perfil',
     'uses'=>'App\Http\Controllers\Site\SiteController@perfil']);
@@ -39,6 +43,11 @@ Route::middleware(EnsureTokenIsValid::class)->group(function () {
     Route::post('/resultado',
         ['as' => 'site.resultado',
         'uses'=> 'App\Http\Controllers\Site\SiteController@resultado']);
+
+    // rotas pagamento 
+
+    Route::get('/pagamento', [App\Http\Controllers\Site\PagamentoController::class, 'searchCountries'])->name('pagamento');
+    Route::post('/pagamento', [App\Http\Controllers\Site\PagamentoController::class, 'processarPagamento'])->name('pagamento.processo');
 
     //rotas de admin
 
