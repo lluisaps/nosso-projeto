@@ -56,7 +56,7 @@ Para ter acesso as diversas funções do projeto e a sua construção baixe o ar
 <br><br>
 <p align="justify"><strong>Abrir Plataforma e Utilizar Mecanismos</strong></p>
 <br>
-Caso queira fazer uso do Software acessa a url: https://projetoscti.com.br/projetoscti31/tcc
+Caso queira fazer uso do Software acesse a url: https://projetoscti.com.br/projetoscti31/tcc
 
 <br><br>
 <p align="justify"><strong>Desenvolvedores Responsáveis</strong></p>
