@@ -1,11 +1,12 @@
 @extends('layout.site')
 @section('titulo','VerificaAi')
 @section('styles')
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('img/icons/logoMundo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 @endsection
 
 @section('conteudo')
@@ -53,13 +54,38 @@
             <br>
         </div>
     </div>
+
+    <div class="modal fade" id="loginAlertModal" tabindex="-1" role="dialog" aria-labelledby="loginAlertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginAlertModalLabel">Aviso</h5>
+                </div>
+                <div class="modal-body">
+                    {{ session('alert') }}
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script src="{{ asset('js/classie.js') }}"></script>
-	<script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/toggleForms.js') }}"></script>
+
+    <!-- Script para abrir o modal se houver a mensagem -->
+    @if(session('alert'))
+        <script>
+            $(document).ready(function() {
+                $('#loginAlertModal').modal('show');
+            });
+        </script>
+    @endif
 @endsection

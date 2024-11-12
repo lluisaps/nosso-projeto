@@ -4,7 +4,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
         <!-- Logo e Nome -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" href="/home">
             <img src="{{ asset('img/icons/logo.png') }}" alt="Logo" style="height: 68px;">
         </a>
 
@@ -54,7 +54,7 @@
                     </div>
                 </li>
                 @elseif(Auth::guest())
-                 <li class="nav-start nav-link"><a href="{{ route('site.login') }}">Fazer Login</a></li>
+                <li class="nav-start nav-link"><a style="text-decoration:none; color:white;" href="{{ route('site.login') }}">Fazer Login</a></li>
                 @endif
             </ul>
         </div>

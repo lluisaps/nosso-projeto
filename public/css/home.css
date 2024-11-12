@@ -1,0 +1,57 @@
+.video-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content-wrap {
+    width: 100%;
+    height: 100vh; /* 100% da altura da viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.botao_home:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.floating-image img {
+    max-width: 80%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5vh);
+    }
+}

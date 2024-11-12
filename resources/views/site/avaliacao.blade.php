@@ -1,5 +1,5 @@
 @extends('layout.site')
-@section('titulo','Home')
+@section('titulo','Verifica AI')
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">

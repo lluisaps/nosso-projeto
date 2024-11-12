@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ConnectException;
 
 class ApiUploadController extends Controller
 {
@@ -19,7 +20,7 @@ class ApiUploadController extends Controller
         return view('site.resultado', ['predictions' => $predictions, 'imagePath' => $dadosImagem['urlPublica']]);
     }
 
-    public function consultaIa($dadosImagem) : string 
+    public function consultaIa($dadosImagem) : mixed 
     {
         try {
             $client = new Client();
@@ -36,7 +37,10 @@ class ApiUploadController extends Controller
             $responseBody = json_decode($response->getBody()->getContents(), true);
 
             return isset($responseBody['type']) ? $responseBody['type'] : "Nossa IA não identificou o seu documento, pode enviar outra imagem?";
-            
+        
+        } catch (ConnectException $e) {
+            return null; 
+        
         } catch (RequestException $e) {
             return "Erro ao identificar o documento, por favor insira outra imagem. Código de erro: ".$e->getCode();
         }

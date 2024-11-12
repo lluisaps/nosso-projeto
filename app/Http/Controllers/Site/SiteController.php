@@ -8,18 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class SiteController extends Controller
 {
-    public function index () {
-        return view("site.home");
-    }
-
     public function perfil () {
         return view("site.perfil");
     }
     
-    public function sobre () {
-        return view("site.sobre");
-    }
-
     public function avaliacao () {
         return view("site.avaliacao");
     }

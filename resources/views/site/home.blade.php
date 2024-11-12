@@ -1,86 +1,22 @@
 @extends('layout.site')
+@section('titulo','Verifica AI')
 
 @section('styles')
-<link rel="shortcut icon" href="../favicon.ico">
+<link rel="shortcut icon" href="{{ asset('img/icons/logoMundo.png') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('css/doc.css') }}">
 @endsection
 
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+@endsection
+
 @section('conteudo')
-
-<head>
-    <style>
-        .video-bg {
-            position: absolute;
-            top: 0;
-            /* left: 0; */
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            padding: 0;
-            margin: 0;
-        }
-
-        .background-video-container {
-    /* height: 100vh; Força a ocupação da tela inteira */
-    /* height: 83vh;
-    margin-top: -24vh; */
-}
-
-.overlay-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .content-wrap {
-    width: 100%;
-    height: 100vh; /* 100% da altura da viewport */
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.botao_home:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .floating-image img {
-        max-width: 80%;
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-5vh);
-        }
-    }
-
-    </style>
-</head>
 <a id="seta"></a>
 <div>
     <div class="row text-center  background-video-container">
@@ -117,7 +53,6 @@
     </div>
 </div>
     </div>
-    <!-- <div style="margin-top: 6vh;"> -->
     <div class="row text-center" style="background-color: #1a294d;">
         <div class="col">
             <h2 class="text-primary">O QUE FAZEMOS?</h2>
@@ -149,7 +84,6 @@
             </div>
         </div>
     </div>
-    <!-- </div> -->
     <div class="row py-5" style="background-image: url('{{ asset('img/icons/2fundo.jpg') }}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="col-md-6 mx-auto">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
@@ -171,7 +105,7 @@
                 </button>
             </div>
         </div>
-        <div class="col text-center" style="align-content: center"> <!--  class="col-md-10 mx-auto mt-5" -->
+        <div class="col text-center" style="align-content: center">
             <div class="col-md-10 mx-auto mt-5" style="align-content: center">
                 <h2 class="text-light" id="sobre">UM POUCO SOBRE A <span class="text-primary">VERIFICA AI</span></h2>
             </div>
@@ -227,7 +161,9 @@
                         <li class="text-center">Suporte via e-mail</li>
                         <li class="text-center">Acesso a 3 tipos documentos para avalidação</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+                      <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#subscriptionModal">
+                        Assine Agora
+                    </button>
                 </div>
             </div>
         </div>
@@ -245,7 +181,9 @@
                         <li class="text-center">Armazenamento de 5GB dos documentos</li>
                         <li class="text-center">Acesso a 6 tipos de documento para validação</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+                      <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#subscriptionModal">
+                        Assine Agora
+                    </button>
                 </div>
             </div>
         </div>
@@ -263,10 +201,31 @@
                         <li class="text-center">Armazenamento de 20GB dos documentos</li>
                         <li class="text-center">Acesso a 6 tipos de documento para validação</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Assine Agora</button>
+                    <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#subscriptionModal">
+                        Assine Agora
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="subscriptionModal" tabindex="-1" role="dialog" aria-labelledby="subscriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscriptionModalLabel">Assinaturas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                As formas de assinatura estarão disponíveis em breve.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 @endsection

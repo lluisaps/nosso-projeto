@@ -1,8 +1,8 @@
 @extends('layout.site')
-@section('titulo', 'Perfil')
+@section('titulo', 'Verifica AI')
 
 @section('styles')
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('img/icons/logoMundo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}" />

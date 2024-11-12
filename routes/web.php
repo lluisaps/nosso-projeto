@@ -1,23 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\EnsureTokenIsValid;
 
 //Rotas de Site
 Route::get('/',
-        ['uses'=>'App\Http\Controllers\Site\SiteController@index']);
+        ['uses'=>'App\Http\Controllers\Site\PublicController@home']);
 
 Route::get('/home', 
         ['as' =>'site.home',
-        'uses'=>'App\Http\Controllers\Site\SiteController@index']);
+        'uses'=>'App\Http\Controllers\Site\PublicController@home']);
 
 Route::get('/sobre',
         ['as' =>'site.sobre',
-        'uses'=>'App\Http\Controllers\Site\SiteController@sobre']);
+        'uses'=>'App\Http\Controllers\Site\PublicController@sobre']);
 
-Route::group(['middleware' => 'auth'],function() {
+Route::middleware(EnsureTokenIsValid::class)->group(function () {
     Route::get('/perfil',
-        ['as' =>'site.perfil',
-        'uses'=>'App\Http\Controllers\Site\SiteController@perfil']);
+    ['as' =>'site.perfil',
+    'uses'=>'App\Http\Controllers\Site\SiteController@perfil']);
 
     Route::post('/perfil/atualizar_foto', 
         ['as'=> 'site.atualizarFoto',
@@ -45,9 +46,9 @@ Route::group(['middleware' => 'auth'],function() {
         ['as' => 'admin.usuarios.index',
         'uses'=> 'App\Http\Controllers\Admin\UsuarioController@index']);
 
-     Route::get('/admin/usuarios/adicionar',
-         ['as' =>'admin.usuarios.adicionar',
-         'uses'=>'App\Http\Controllers\Admin\UsuarioController@adicionar']);
+    Route::get('/admin/usuarios/adicionar',
+        ['as' =>'admin.usuarios.adicionar',
+        'uses'=>'App\Http\Controllers\Admin\UsuarioController@adicionar']);
 
     Route::post('/admin/usuarios/salvar',
         ['as' =>'admin.usuarios.salvar',
@@ -65,6 +66,7 @@ Route::group(['middleware' => 'auth'],function() {
         ['as' =>'admin.usuarios.excluir',
         'uses'=>'App\Http\Controllers\Admin\UsuarioController@excluir']);
 });
+
 
 //Rotas de Login
 Route::get('/login',

@@ -11,14 +11,17 @@ class EnsureTokenIsValid
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (! $request->auth->user) {
-            return redirect('site.login');
+        // Verifica se o usuário está autenticado
+        if (!auth()->check()) {
+            return redirect()->route('site.login')->with('alert', 'Você precisa estar logado para acessar essa área.'); // Redireciona para a rota 'site.login' se não autenticado
         }
- 
+
         return $next($request);
     }
 }
