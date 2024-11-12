@@ -6,19 +6,19 @@
 
 ### Tópicos Abordados
 <br>
- - [Autentificação de Documentos com Inteligência Artificial](#autentificacao-de-documentos-com-inteligencia-artificial)
+ - Autentificação de Documentos com Inteligência Artificial
 <br>
-- [Funcionalidades do Projeto](#funcionalidades-do-projeto)
+- Funcionalidades do Projeto
 <br>
-- [Aplicação](#aplicacao-do-verifica-ai)
+- Aplicação
 <br>
-- [Ferramentas Utilizadas](#ferramentas-utilizadas)
+- Ferramentas Utilizadas
 <br>
-- [Acesso ao Projeto](#acesso-ao-projeto)
+- Acesso ao Projeto
 <br>
-- [Abrir Plataforma e Utilizar Mecanismos](#abrir-plataforma-e-utilizar-mecanismos)
+- Abrir Plataforma e Utilizar Mecanismos
 <br>
-- [Desenvolvedores](#desenvolvedores)
+- Desenvolvedores Responsáveis
 <br><br><br>
 
 <p align="justify"><strong>Autentificação de Documentos com Inteligência Artificial</strong></p>
