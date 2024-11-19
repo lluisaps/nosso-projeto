@@ -1,5 +1,6 @@
 @extends('layout.app')
 
+
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container-fluid">
@@ -18,33 +19,35 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('site.home') }}">
-                        <img src="{{ asset('img/icons/casa.png') }}" alt="Home" style="height: 24px;">
+                        <img src="{{ asset('img/icons/casa.png') }}" alt="Home" height="30em">
                         <span class="ms-2" style="color: white;">Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('site.doc') }}">
-                        <img src="{{ asset('img/icons/documento.png') }}" alt="Documentos" style="height: 24px;">
+                        <img src="{{ asset('img/icons/documento.png') }}" alt="Documentos" height="30em">
                         <span class="ms-2" style="color: white;">Documentos</span>
                     </a>
                 </li>
                 @if(Auth::check() && Auth::user()->admin)
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.usuarios.index') }}">
-                            <img src="{{ asset('img/icons/documento.png') }}" alt="Crud" style="height: 24px;">
+                            <img src="{{ asset('img/icons/documento.png') }}" alt="Crud" height="30em">
                             <span class="ms-2" style="color: white;">Crud</span>
                         </a>
                     </li>
                 @endif
                 @if(Auth::user())
                 <li class="nav-start nav-link">
-                    <div class="avatar-wrap">
-                        @if(Auth::user()->foto_perfil)
-                            <img class="avatar" id="open-button" src="data:image/jpeg;base64,{{ base64_encode(Auth::user()->foto_perfil) }}" alt="Foto de perfil" height="24px">
+                    <div class="avatar-wrap" onclick="toggleMenu()">
+                        @if(Auth::user()->foto_perfil && file_exists(public_path(Auth::user()->foto_perfil)))
+                            <img class="avatar" id="open-button" src="{{ asset(Auth::user()->foto_perfil) }}" alt="Foto de perfil" height="30em">
+                            <span class="ms-2" style="color: white;">Perfil</span>
                         @else
-                            <img id="open-button" src="{{ asset('img/icons/perfil2.png') }}" alt="Avatar" class="avatar" height="24px">
+                            <img id="open-button" src="{{ asset('img/icons/perfil2.png') }}" alt="Avatar" class="avatar" height="30em">
                             <span class="ms-2" style="color: white;">Perfil</span>
                         @endif
+                        <!-- Menu Lateral -->
                         <nav class="menu-side">
                             <a href="{{ route('site.perfil') }}">Meu Perfil</a>
                             <a href="{{ route('site.home') }}">Home</a>
@@ -112,4 +115,11 @@
         margin-right: 8px;
     }
 </style>
+
+<script>
+    function toggleMenu() {
+        const avatarWrap = document.querySelector('.avatar-wrap');
+        avatarWrap.classList.toggle('active');
+    }
+</script>
 @endsection

@@ -86,7 +86,7 @@
     </h1>
     <h1 class="text-light" style="margin-bottom: -0.3em;">
         <span style="font-size: 2.5em; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
-            Eficiência
+            a Eficiência
         </span>
     </h1>
     <p style="font-size: 2.2em; color: #81A9FF; margin-bottom: -0.2em; text-shadow: 1px 1px 6px rgba(0,0,0,0.3);">
@@ -222,8 +222,7 @@
                                 <li class="text-center">Acesso a {{ $plano->tipos_documentos }} tipos de documentos para validação</li>
                             </ul>
                             <p class="text-center">
-                                <a href="/pagamento?plano={{ $plano->id }}&valor={{ $plano->preco }}&tempo_assinatura={{ $plano->tempo_assinatura }}@if(auth()->check())&user_id={{ auth()->user()->id }}@endif" 
-                                class="btn btn-primary botao-pros text-center">Assinar</a>
+                            <a  class="btn btn-primary botao-pros text-center" href="/pagamento?plano={{ $plano->id }}&valor={{ $plano->preco }}&tempo_assinatura={{ $plano->tempo_assinatura }}{{ auth()->check() === true ? '&user_id=' . auth()->user()->id : '' }}">Assinar</a>
                             </p>
                         </div>
                     </div>

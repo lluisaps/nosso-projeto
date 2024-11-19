@@ -39,8 +39,8 @@
         <div class="col-md-1">{{ Str::limit($row->password, 8, '...') }}</div>
 
         <div class="col-md-1">
-            @if($row->foto_perfil)
-                <img src="{{ asset('img/fotoPerfil/foto_perfil_' . $row->id . '.jpg') }}" alt="Foto de perfil" width="30">
+            @if($row->foto_perfil && file_exists(public_path($row->foto_perfil)))
+                <img src="{{ asset('img/fotoPerfil/foto_perfil_' . $row->id . '.png') }}" alt="Foto de perfil" width="30">
             @else
                 <img src="{{ asset('img/icons/avatar128.png') }}" alt="Imagem padrão" width="30">
             @endif

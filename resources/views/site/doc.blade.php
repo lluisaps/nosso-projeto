@@ -11,31 +11,30 @@
 @endsection 
 
 @section('conteudo')
-    <div class="content">
-        <a id="seta"></a>
-        <header class="codrops-header">
-            <br><br><br><br><br><br><br><br><br><br>
-            <h1>Adicione seu arquivo abaixo <span></span></h1>
-            <p>A leitura da IA pode demorar algum tempo. <br></p>
-            <br><br><br><br><br><br>
-            <div class="wrap">
-                <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+<div class="content mt-5" style="margin-bottom: 15em">
+    <header class="codrops-header text-center" style="margin-bottom: 19em;">
+        <h1>Adicione seu arquivo abaixo</h1>
+        <p class="mt-3">A leitura da IA pode demorar algum tempo.</p>
+    </header>
 
-                    <!-- Botão para escolher arquivo da galeria -->
-                    <label for="file-upload" class="button">Escolher Imagem</label>
-                    <input id="file-upload" type="file" name="image" accept="image/*" style="display:none;" onchange="this.form.submit()">
-                </form>
-
-                <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-
-                    <!-- Botão para capturar foto com a câmera -->
-                    <label for="camera-upload" class="button">Tirar Foto</label>
-                    <input id="camera-upload" type="file" name="image" accept="image/*" capture="camera" style="display:none;" onchange="this.form.submit()">
-                </form>
-            </div>
-
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 text-center">
+            <!-- Botão para escolher arquivo da galeria -->
+            <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data" class="mb-4">
+                @csrf
+                <label for="file-upload" class="button">Escolher Imagem</label>
+                <input id="file-upload" type="file" name="image" accept="image/*" style="display:none;" onchange="this.form.submit()">
+            </form>
+        </div>
+            <div class="col-md-4 text-center">
+            <!-- Botão para capturar foto com a câmera -->
+            <form action="{{ route('site.upload') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <label for="camera-upload" class="button">Tirar Foto</label>
+                <input id="camera-upload" type="file" name="image" accept="image/*" capture="camera" style="display:none;" onchange="this.form.submit()">
+            </form>
+        </div>
+    </div>
 
 
             <!-- Exibe os erros de validação -->

@@ -44,6 +44,7 @@ class PagamentoService {
 
     public function registrarPagamento($data) : mixed
     {
+        \Log::info("aqui");
         $transactionId = DB::table('transactions')->insertGetId([
             'id_transaction' => $data['id'],
             'operation_type' => $data['operation_type'],
@@ -60,8 +61,8 @@ class PagamentoService {
             'collector_id' => $data['user_id'],
             'captured' => $data['captured'],
             'binary_mode' => $data['binary_mode'],
-            'date_approved' => Carbon::parse($data['date_approved'])->setTimezone('UTC')->format('Y-m-d H:i:s'),
-            'money_release_date' => Carbon::parse($data['money_release_date'])->setTimezone('UTC')->format('Y-m-d H:i:s'),
+            'date_approved' => isset($data['date_approved']) ? Carbon::parse($data['date_approved'])->setTimezone('UTC')->format('Y-m-d H:i:s') : null,
+            'money_release_date' => isset($data['money_release_date']) ? Carbon::parse($data['money_release_date'])->setTimezone('UTC')->format('Y-m-d H:i:s') : null,
             'processing_mode' => $data['processing_mode']
         ]);
     
@@ -125,11 +126,13 @@ class PagamentoService {
             'transaction_id' => $transactionId
         ]);
 
+        \Log::info($data['tmp_assinatura']);
+        \Log::info($data['user_id']);
 
-        DB::table('users')
+        DB::table('usuarios')
         ->where('id', $data['user_id'])
         ->update([
-            'tempo_expiracao' => Carbon::now()->addMonths($data['tmp_assinatura'])->format('Y-m-d H:i:s')
+            'tempo_expiracao' => Carbon::now()->addMonths((int) $data['tmp_assinatura'])->format('Y-m-d H:i:s'),
         ]);
 
         return true;

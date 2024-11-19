@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Models\Avaliacoes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,5 +60,21 @@ class SiteController extends Controller
         } else {
             return redirect()->route('site.perfil')->with('error', 'Arquivo invalido.');
         }
+    }
+
+    public function registraAvaliacao(Request $request)
+    {
+        $request->validate([
+            'avaliacao' => 'required|integer|min:1|max:5',  // Valida se a avaliação é um número entre 1 e 5
+        ]);
+
+        // Salva a avaliação no banco de dados
+        Avaliacoes::create([
+            'user_id' => Auth::user()->id, // ID do usuário autenticado
+            'nota' => $request->avaliacao,
+        ]);
+
+        // Retorna com uma mensagem de sucesso
+        return redirect()->route('site.avaliacao')->with('success', 'Avaliação salva com sucesso!');
     }
 }

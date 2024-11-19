@@ -1,6 +1,7 @@
 @extends('layout.site')
 @section('titulo','Verifica AI')
 @section('styles')
+    <link rel="shortcut icon" href="{{ asset('img/icons/logoMundo.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/menu_topside.css') }}" />
@@ -9,6 +10,7 @@
 
 @section('conteudo')
     <div class="content">
+        <div style="margin-bottom: 11em">
         <header class="codrops-header">
             <h1>Resultado da Predição <span></span></h1>
             <p>Veja abaixo o resultado da IA para a imagem enviada.</p>
@@ -35,7 +37,9 @@
             </div>
 
             <br><br><br>
-            <a href="{{ url('/doc') }}" class="button">Enviar outra imagem</a>
+            <a href="{{ url('/doc') }}" class="button" style=" text-decoration: none;margin-bottom: 4em">Enviar outra imagem</a>
         </header>
     </div>
+        </div>
+        
 @endsection

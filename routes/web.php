@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\EnsureTokenIsValid;
 use App\Http\Controllers\Site\PagamentoController;
+use App\Http\Controllers\Site\SiteController;
 
 //Rotas publicas
 
@@ -43,6 +44,8 @@ Route::middleware(EnsureTokenIsValid::class)->group(function () {
     Route::post('/resultado',
         ['as' => 'site.resultado',
         'uses'=> 'App\Http\Controllers\Site\SiteController@resultado']);
+
+    Route::post('/avaliacao', [SiteController::class, 'registraAvaliacao'])->name('avaliacao.registra');
 
     // rotas pagamento 
 

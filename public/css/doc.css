@@ -108,9 +108,9 @@ body,
 }
 
 .menu-top .profile,
-.menu-side {
+/* .menu-side {
 	width: 300px;
-}
+} */
 
 .menu-top .profile img {
 	float: left;
@@ -133,7 +133,7 @@ body,
 	}
 }
 
-.menu-side a {
+/* .menu-side a {
 	display: block;
 	padding: 1.2em;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -141,7 +141,7 @@ body,
 
 .menu-side a:first-child {
 	border-top: 1px solid rgba(0,0,0,0.1);
-}
+} */
 
 /* aparece o menu att luisa */
 .show-menu .menu-wrap {

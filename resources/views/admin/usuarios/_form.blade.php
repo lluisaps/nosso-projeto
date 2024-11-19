@@ -1,6 +1,6 @@
-@if(isset($linha->foto_perfil))
+@if(!empty($linha->foto_perfil) && file_exists(public_path($linha->foto_perfil)))
     <div class="input-field">
-        <img src="{{ asset('img/fotoPerfil/foto_perfil_' + $linha->$id) }}" width="100" alt="Vazio">
+        <img src="{{ asset($linha->foto_perfil) }}" width="100" alt="Vazio">
     </div>
 @else
     <div class="input-field">
@@ -18,16 +18,16 @@
 </div>  
 
 <div class="input-field">
-    <input type="text" name="nome" value="{{ isset($linha->name) ? $linha->name : ''}}" placeholder="Name">
+    <input type="text" name="nome" value="{{ isset($linha->nome) ? $linha->nome : ''}}" placeholder="nome">
 </div>
 <div class="input-field">
-    <input type="text" name="login" value="{{ isset($linha->username) ? $linha->username : '' }}" placeholder="Username">
+    <input type="text" name="login" value="{{ isset($linha->login) ? $linha->login : '' }}" placeholder="login">
 </div>
 <div class="input-field">
     <input type="email" name="email" value="{{isset($linha->email) ? $linha->email : ''}}" placeholder="Email">
 </div>
 <div class="input-field">
-    <input type="password" name="senha" value="{{isset($linha->password) ? $linha->password : ''}}" placeholder="Senha">
+    <input type="password" name="password" value="{{isset($linha->password) ? $linha->password : ''}}" placeholder="Senha">
 </div>
 <div class="input-field">
     <p style="text-align: left;">Administrador:</p>

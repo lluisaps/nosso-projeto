@@ -82,10 +82,11 @@
     }
   </style>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <div class="row mt-5 ml-1 mx-auto" style="margin-top: -2em !important;">
+    <div class="row mt-5 ml-1 mx-auto" style="margin-top: -2em !important; background: linear-gradient(2deg, rgba(117, 202, 239, 0.3), rgba(67, 116, 137, 0.6))">
         <div class="col-sm-6 mt-5">
+            <img src="{{asset('img/icons/mercado_pago.svg')}}" alt="Checkout" style="width: 17em;">
             <h5 class="text-center">Efetue o pagamento do seu plano mensal</h5>
-            <img src="{{asset('img/icons/logo.png')}}" alt="Checkout" class="img-fluid mt-5">
+            <img src="{{asset('img/icons/logo.png')}}" alt="Checkout" class="img-fluid mt-3">
             <div class="card-footer text-center">
                 <p></p>
                 <a href="/home">Voltar para a pagina inicial.</a>
@@ -313,7 +314,8 @@
                 return response.json();  // Converte a resposta em JSON
             }).then(data => {
                 //redireciona para a url de login com a mensagem de boas vindas
-                document.location.href = '/redirect';
+                document.location.href = '/doc';
+                alert('Pagamento contabilizado com sucesso!');
                 console.log('Success:', data); // Verifica se há sucesso
             }).catch(error => {
 
