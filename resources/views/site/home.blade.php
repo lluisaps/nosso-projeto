@@ -222,7 +222,7 @@
                                 <li class="text-center">Acesso a {{ $plano->tipos_documentos }} tipos de documentos para validação</li>
                             </ul>
                             <p class="text-center">
-                            <a  class="btn btn-primary botao-pros text-center" href="/pagamento?plano={{ $plano->id }}&valor={{ $plano->preco }}&tempo_assinatura={{ $plano->tempo_assinatura }}{{ auth()->check() === true ? '&user_id=' . auth()->user()->id : '' }}">Assinar</a>
+                            <a  class="btn btn-primary botao-pros text-center" href="/pagamento?plano={{ $plano->id }}&valor={{ $plano->preco }}&tempo_assinatura={{ $plano->tempo_assinatura }}">Assinar</a>
                             </p>
                         </div>
                     </div>

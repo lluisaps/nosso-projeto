@@ -13,7 +13,6 @@ class PagamentoController extends Controller
 
     public function processarPagamento(Request $request)
     {
-
         $pagamentoService = new PagamentoService($request['token']);
 
         $retorno = json_decode($pagamentoService->post(self::setaParamsPost($request)), true);
@@ -32,7 +31,6 @@ class PagamentoController extends Controller
 
     public static function setaParamsPost($params)
     {
-
         self::$paramsPost = [
                 'token' => $params['token'],
                 'idTransacao' => $params['issuer_id'],

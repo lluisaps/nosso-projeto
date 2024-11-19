@@ -218,7 +218,7 @@
       const planValue = "{{$valor}}";
       const planId = "{{$plano}}";
       const tmpAssinatura = "{{$tempo_assinatura}}";
-      const user_id = "{{$user_id}}";
+      const user_id = "{{auth()->user()->id}}";
 
       const mp = new MercadoPago("{{ env('PUBLIC_KEY') }}");
 
@@ -284,7 +284,6 @@
               identificationType,
             } = cardForm.getCardFormData();
 
-
             fetch("{{ route('pagamento.processo') }}", {
               method: "POST",
               headers: {
@@ -294,7 +293,7 @@
               body: JSON.stringify({
                 planId,
                 tmpAssinatura,
-                user_id: user_id,
+                user_id,
                 token,
                 issuer_id,
                 payment_method_id,
@@ -303,7 +302,7 @@
                 description: "Compra de plano do sistema PROS",
                 payer: {
                   email,
-                  user_id: user_id,
+                  user_id,
                   identification: {
                     type: identificationType,
                     number: identificationNumber,

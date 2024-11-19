@@ -44,7 +44,6 @@ class PagamentoService {
 
     public function registrarPagamento($data) : mixed
     {
-        \Log::info("aqui");
         $transactionId = DB::table('transactions')->insertGetId([
             'id_transaction' => $data['id'],
             'operation_type' => $data['operation_type'],
@@ -125,9 +124,6 @@ class PagamentoService {
             'plano_id' => $data['idPlano'],
             'transaction_id' => $transactionId
         ]);
-
-        \Log::info($data['tmp_assinatura']);
-        \Log::info($data['user_id']);
 
         DB::table('usuarios')
         ->where('id', $data['user_id'])
